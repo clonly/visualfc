@@ -1,0 +1,52 @@
+对话资源字体控制支持
+
+一、简介
+FreeCode提供了对话框资源字体控制的支持。
+源文件支持为dlgfonts.h
+设计支持为FreeCode向导中Winx Font/WTL Font
+
+二、使用FreeCode添加字体控制
+在WINX/WTL项目中运行FreeCode插件，WINX项目使用Winx Font标签，WTL 使用WTL Font标签，选择控件ID,Add Font即可对控件进行字体设计。
+
+三、修改源代码
+WTL中，将CDialogFont添加为基类，在OnInitDialog中添加 DlgFont_Init()即可。
+
+#include <dlgfonts.h>
+class CMainDlg : public CDialogImpl<CMainDlg>, public CUpdateUI<CMainDlg>,
+		public CMessageFilter, public CIdleHandler, 
+		public CDialogFont<CMainDlg>, 
+		public CDialogResize<CMainDlg>
+{
+public:
+...
+public:
+	enum { IDD = IDD_MAINDLG };
+	//这是FreeCode自动生成的
+	BEGIN_DLGFONT_MAP(CMainDlg)
+		DLGFONT_CONTROL_EX(IDOK,-12,0,0,0,700,1,0,0,134,3,2,1,2,_T("宋体"))
+		DLGFONT_DIALOG_EX(-14,0,0,0,400,0,0,0,134,3,2,1,2,_T("宋体"))
+	END_DLGFONT_MAP()
+
+	LRESULT OnInitDialog(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& /*bHandled*/)
+	{
+		DlgFont_Init();
+		return TRUE;
+	}
+};
+
+WINX中，在OnInitDialog中添加 DlgFont_Init()即可。
+#include <dlgfonts.h>
+class CWinxtestMainFrame : public winx::AxMainDlgFrame<CWinxtestMainFrame, IDD_MAINDLG>
+{
+...
+	WINX_DLGFONT_BEGIN()
+		WINX_DLGFONT_EX(IDOK, -16,0,0,0,400,0,0,0,134,3,2,1,2,_T("宋体"))
+		WINX_DLGFONT_EX(IDCANCEL, -14,0,0,0,400,0,0,0,134,3,2,1,2,_T("宋体"))
+	WINX_DLGFONT_END();
+	
+	BOOL OnInitDialog(HWND hDlg, HWND hWndDefaultFocus)
+	{
+		DlgFont_Init();
+		return TRUE;
+	}
+};

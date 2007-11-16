@@ -1,0 +1,96 @@
+欢迎使用 VisualFC
+
+感谢以下项目:
+The WTL Project http://sourceforge.net/projects/wtl
+The Winx Project http://www.winxgui.com
+The WTLHelper http://codeproject.net
+The wxWidgets http://www.wxwidgets.org
+The Code::Blocks http://www.codeblocks.org
+
+功能支持：
+提供WINX/WTL在VS60/VS2005下的可视化设计，包括：
+*) winx event
+*) winx cmd
+*) winx notify
+*) winx dlg resize
+*) winx dlg font
+*) wtl cmd
+*) wtl notify
+*) wtl dlg resize
+*) wtl dlg font
+
+更新记录 1.0b (2007-11-15)
+*)更改项目为VisualFC (Visual FreeCode)，发布1.0测试版
+*)全面支持WINX/WTL, VisualFC完全支持VisualFC项目自身设计。
+*)分为WTL/WINX两个类向导，每个类向导均支持以下功能：
+  Message(Event), Notify, Command, DialogResize, UpdateUI, DataExchage, DialogFont, ClassInfo
+
+更新记录 0.51b  (2007-10-31)
+----------------------------------------
+*)使用新的页面支持，以支持WINX/WTL多个GUI库开发。
+*)提供对WTL command notify的支持
+*)提供对WTL dlg font的支持
+
+更新记录 0.5.0  (2007-10-24)
+---------------------------------------
+*)FreeCode0.3以来最重要的升级，提供了对WTL的部分支持。
+
+*)提供了对WTL Dialog Resize的支持
+  由此FreeCode的布局控制代码由FreeCode自身生成
+
+*)修正了FreeCode For VS2005插入代码不规范的问题
+
+*)修改parser类，使其只依赖wxBase库，从而减小fcwizard.dll的大小
+
+
+更新记录 0.3.10 2007-10-5
+---------------------------------------
+*) 更新了 evnet_page类，将Event实现改为Kind/List形式，即合并了VisualWinx0.2的功能
+
+*) 合并了fox1996的 FreeCode For VS2005插件
+
+*) 实现了tag_token 类。方便定义宏解析.
+
+*) 更新了CODE::BLOCKS的parser类，实现了对enum的完全支持。
+   可以识别WTL对话框类的IDD资源 enum { IDD = IDD_ABOUT };
+
+
+更新记录 0.3.0516 (2007-05-16)
+---------------------------------------
+*) 实现了winx dlgresize支持
+
+*) 实现了winx dlgfont支持
+   需要包含dlgfonts.h文件
+
+*) 更新了codeparser类
+   使用 template<FUNC>格式代替 QLib::Event<>格式
+
+*) 独立了codeupdate类来实现更新支持
+
+*) 更正了支持WINX_NOTIFY的一个BUG
+
+*) 将WinxNotify页面EditCode功能直接指向实际对应函数
+
+*) 在message.ini中新增加SysLink Control
+新增消息非常简单，打开message.ini文件
+在文件最后加上如下语句即可。res表示资源文件中的类名
+;NT5.1 CONTROL
+<Link>
+res=SysLink
+NM_CLICK
+NM_RETURN
+NM_THEMECHANGED
+</Link>
+
+更新记录 0.3.0501(2007-05-01)
+----------------------------------------
+第一个正式公布版本
+
+*) VS60下插件实现
+
+*) 实现 winx event支持
+
+*) 实现 winx message支持
+
+0.1和0.2为提供winx event支持的实验版本，
+故freecode 版本从0.3开始，
