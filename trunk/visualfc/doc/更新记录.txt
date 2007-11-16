@@ -19,8 +19,8 @@ The Code::Blocks http://www.codeblocks.org
 *) wtl dlg resize
 *) wtl dlg font
 
-更新记录 1.0b (2007-11-15)
-*)更改项目为VisualFC (Visual FreeCode)，发布1.0测试版
+更新记录 0.71b (2007-11-15)
+*)更改项目为VisualFC (Visual FreeCode)，发布0.71b测试版
 *)全面支持WINX/WTL, VisualFC完全支持VisualFC项目自身设计。
 *)分为WTL/WINX两个类向导，每个类向导均支持以下功能：
   Message(Event), Notify, Command, DialogResize, UpdateUI, DataExchage, DialogFont, ClassInfo
