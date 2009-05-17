@@ -1,0 +1,3 @@
+code::blocks 许可协议
+
+code::blocks使用GPL2.0许可协议

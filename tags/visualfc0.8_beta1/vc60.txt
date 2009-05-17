@@ -1,0 +1,4 @@
+在编写page_winx_ddx时QLib::Event<>
+引起了错误
+fatal error C1076: compiler limit : internal heap limit reached; use /Zm to specify a higher limit
+设置/Zm128即可。
