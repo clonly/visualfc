@@ -1,0 +1,26 @@
+// AddIn.idl : IDL source for AddIn
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (AddIn.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(7B95A307-0440-45EA-9A60-F2478DB24CD9),
+	version(1.0),
+	helpstring("VFCAddinNET 1.0 Type Library")
+]
+library VFCAddinNETLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(7C01827B-4FA2-4FFE-9963-D6F158ADE304),
+		helpstring("Connect Class")
+	]
+	coclass Connect
+	{
+		[default] interface IUnknown;
+	};
+};

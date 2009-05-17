@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VFCAddinNET", "VFCAddinNET\VFCAddinNET.vcproj", "{437CDFFB-1647-45D9-97E9-E4947EFB6C0C}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "VFCAddinNETSetup", "VFCAddinNETSetup\VFCAddinNETSetup.vdproj", "{868E5531-6559-4E52-8217-5A1239C10079}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VFCAddinNETRes", "VFCAddinNETRes\VFCAddinNETRes.vcproj", "{20B57356-2846-4F2A-A9B7-99AF029B04A4}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{437CDFFB-1647-45D9-97E9-E4947EFB6C0C}.Debug.ActiveCfg = Debug|Win32
+		{437CDFFB-1647-45D9-97E9-E4947EFB6C0C}.Debug.Build.0 = Debug|Win32
+		{437CDFFB-1647-45D9-97E9-E4947EFB6C0C}.Release.ActiveCfg = Release|Win32
+		{437CDFFB-1647-45D9-97E9-E4947EFB6C0C}.Release.Build.0 = Release|Win32
+		{868E5531-6559-4E52-8217-5A1239C10079}.Debug.ActiveCfg = Debug
+		{868E5531-6559-4E52-8217-5A1239C10079}.Release.ActiveCfg = Release
+		{20B57356-2846-4F2A-A9B7-99AF029B04A4}.Debug.ActiveCfg = Debug|Win32
+		{20B57356-2846-4F2A-A9B7-99AF029B04A4}.Debug.Build.0 = Debug|Win32
+		{20B57356-2846-4F2A-A9B7-99AF029B04A4}.Release.ActiveCfg = Release|Win32
+		{20B57356-2846-4F2A-A9B7-99AF029B04A4}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

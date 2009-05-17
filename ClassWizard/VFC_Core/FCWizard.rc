@@ -1,0 +1,751 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "1 TYPELIB ""FCWizard.tlb""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "FCWizard Module\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "FCWizard\0"
+            VALUE "LegalCopyright", "Copyright 2007\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OLESelfRegister", "\0"
+            VALUE "OriginalFilename", "FCWizard.DLL\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "FCWizard Module\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_WIZARD_DIALOG DIALOGEX 0, 0, 392, 245
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Winx/WTL Class Wizard"
+FONT 12, "System", 0, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_PROJECT_COMBO,2,14,88,122,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CLASSNAME_COMBO,101,14,88,111,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_RESDIALOG_COMBO,200,14,88,82,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_RESMENU_COMBO,299,14,88,74,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Project Name:",IDC_STATIC_PROJECT,4,4,49,8
+    LTEXT           "Class Name:",IDC_STATIC,101,4,45,8
+    LTEXT           "Resource Dialog:",IDC_STATIC,200,4,57,8
+    LTEXT           "Resouce Menu",IDC_STATIC,299,4,50,8
+    LTEXT           "FileName",IDC_FILENAME,101,29,287,12,SS_CENTERIMAGE,
+                    WS_EX_TRANSPARENT | WS_EX_STATICEDGE
+    DEFPUSHBUTTON   "OK",IDOK,267,228,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,326,228,50,14
+    CONTROL         "Tree1",IDC_PAGE_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    TVS_FULLROWSELECT | WS_BORDER | WS_TABSTOP,2,41,88,179
+    CONTROL         "",IDC_PAGE_STATIC,"Static",SS_BLACKFRAME | NOT 
+                    WS_VISIBLE,101,41,287,179
+    CONTROL         "",IDC_LINE_STATIC,"Static",SS_ETCHEDHORZ,35,225,339,1
+    CTEXT           "Page Name",IDC_PAGE_NAME,2,29,88,12,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+END
+
+IDD_PAGE_WINX_EVENT DIALOGEX 0, 0, 291, 138
+STYLE WS_CHILD
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 12, "System"
+BEGIN
+    LISTBOX         IDC_EVENT_LIST,8,12,121,120,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_EVENT_TOKEN_LIST,132,12,100,120,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Add Event",IDC_ADDEVENT_BTN,234,11,50,14
+    PUSHBUTTON      "Delete Event",IDC_DELEVENT_BTN,234,29,50,14
+    LTEXT           "Event Member Functions:",IDC_STATIC,135,2,84,8
+    PUSHBUTTON      "Edit Code",IDC_EDITEVENT_BTN,234,47,50,14,NOT 
+                    WS_VISIBLE
+    PUSHBUTTON      "Kind",IDC_EVENTKIND_BTN,7,1,50,11
+    PUSHBUTTON      "List",IDC_EVENTLIST_BTN,60,1,50,11
+    CONTROL         "Tree1",IDC_EVENT_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    TVS_FULLROWSELECT | WS_BORDER | WS_TABSTOP,8,11,121,120
+END
+
+IDD_PAGE_WINX_NOTIFY DIALOGEX 0, 0, 322, 154
+STYLE WS_CHILD
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 12, "System"
+BEGIN
+    LISTBOX         IDC_CONTROL_LIST,7,10,116,42,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_MENU_LIST,7,55,116,42,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_NOTIFY_LIST,128,10,133,87,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_NOTIFY_TOKEN_LIST,7,105,254,42,LBS_SORT | 
+                    LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Dialog Controls:",IDC_STATIC,7,1,53,8
+    LTEXT           "Menu Items:",IDC_STATIC,62,1,41,8
+    LTEXT           "Message:",IDC_TYPE_STATIC,128,1,107,8
+    PUSHBUTTON      "Add Message",IDC_ADDNOTIFY_BTN,265,10,50,14
+    PUSHBUTTON      "Del Message",IDC_DELNOTIFY_BTN,265,27,50,14
+    LTEXT           "Member Functions:",IDC_STATIC,7,97,63,8
+    PUSHBUTTON      "Edit Code",IDC_EDITNOTIFY_BTN,265,45,50,14,NOT 
+                    WS_VISIBLE
+END
+
+IDD_ADD_NOTIFY_DIALOG DIALOG DISCARDABLE  0, 0, 209, 58
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Add Member Function"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,152,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,152,24,50,14
+    EDITTEXT        IDC_FUNCTIONNAME_EDIT,7,18,132,14,ES_AUTOHSCROLL
+    LTEXT           "Member function name:",IDC_STATIC,7,7,96,8
+    LTEXT           "Notify",IDC_NOTIFY_STATIC,7,34,118,8
+    LTEXT           "ObjectID",IDC_OBJECTID_STATIC,7,43,114,8
+END
+
+IDD_PAGE_CLASSINFO DIALOGEX 0, 0, 200, 158
+STYLE WS_CHILD
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Class Info",IDC_INFO_STATIC,7,7,186,68,0,
+                    WS_EX_TRANSPARENT
+    LTEXT           "Base Class:",IDC_STATIC,14,21,41,8
+    LTEXT           "Resource:",IDC_STATIC,14,57,41,8
+    LTEXT           "NULL",IDC_INFO_RESOURCE,58,55,124,14,SS_CENTERIMAGE,
+                    WS_EX_STATICEDGE
+    EDITTEXT        IDC_INFO_BASECLASS,58,20,124,32,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | NOT WS_BORDER,
+                    WS_EX_STATICEDGE
+END
+
+IDD_PAGE_ABOUT DIALOGEX 0, 0, 209, 139
+STYLE WS_CHILD
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 10, "System"
+BEGIN
+    LTEXT           "Name: ",IDC_STATIC,7,7,27,8
+    LTEXT           "Version:   0.80 RC1 (build 2009.3.22)",IDC_STATIC,7,19,
+                    151,8
+    LTEXT           "The wxWidgets http://www.wxwidgets.org",IDC_STATIC,7,
+                    112,168,8
+    LTEXT           "The Code::Blocks http://www.codeblocks.org",IDC_STATIC,
+                    7,124,168,8
+    LTEXT           "The WTLHelper  http://www.codeproject.net",IDC_STATIC,7,
+                    100,168,8
+    LTEXT           "The Winx Project http://www.winxgui.com",IDC_STATIC,7,
+                    88,168,8
+    LTEXT           "Thanks to:",IDC_STATIC,7,66,35,8
+    LTEXT           "The WTL Project  http://sourceforge.net/projects/wtl/",
+                    IDC_STATIC,7,76,168,8
+    LTEXT           "addin ver",IDC_VERSION_STATIC,39,7,163,8
+    LTEXT           "Anchor:",IDC_STATIC,7,30,25,8
+    LTEXT           "visualfc@gmail.com\r\nqwl2008@gmail.com",IDC_STATIC,39,
+                    30,122,19
+    LTEXT           "Website:  http://sourceforge.net/projects/visualfc",
+                    IDC_STATIC,7,52,158,8
+END
+
+IDD_WINX_EDIT_DLSZ_DIALOG DIALOG DISCARDABLE  0, 0, 223, 99
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit DialogResize"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,166,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,166,24,50,14
+    COMBOBOX        IDC_OBJECTID_COMBO,49,7,97,30,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Object ID:",IDC_STATIC,7,9,33,8
+    CONTROL         "ResizeX",IDC_RESIZE_X,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,37,44,10
+    CONTROL         "ResizeY",IDC_RESIZE_Y,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,52,44,10
+    CONTROL         "ResizeAll",IDC_RESIZE_ALL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,67,47,10
+    CONTROL         "AnchorRightTop",IDC_ANCHOR_RT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,87,37,67,10
+    CONTROL         "AnchorLeftBottom",IDC_ANCHOR_LB,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,87,52,73,10
+    CONTROL         "AnchorRightBottom",IDC_ANCHOR_RB,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,87,67,78,10
+    CONTROL         "AnchorAll",IDC_ANCHOR_ALL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,87,81,46,10
+END
+
+IDD_PAGE_FONT DIALOGEX 0, 0, 240, 140
+STYLE WS_CHILD
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    LISTBOX         IDC_CONTROL_LIST,7,7,167,60,LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    LISTBOX         IDC_TOKEN_LIST,7,70,167,63,LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Add Font",IDC_ADDFONT_BTN,183,7,50,14
+    PUSHBUTTON      "Del Font",IDC_DELFONT_BTN,183,23,50,14
+    PUSHBUTTON      "Add DlgFont",IDC_ADDDLGFONT_BTN,183,42,50,14
+END
+
+IDD_PAGE_DLSZ DIALOGEX 0, 0, 246, 140
+STYLE WS_CHILD
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 12, "System", 0, 0, 0x1
+BEGIN
+    LISTBOX         IDC_CONTROL_LIST,7,7,175,63,LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_USETABSTOPS | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_TOKEN_LIST,7,75,175,58,LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Add Resize",IDC_ADDDLSZ_BTN,189,7,50,14
+    PUSHBUTTON      "Del Resize",IDC_DELDLSZ_BTN,189,28,50,14
+END
+
+IDD_PAGE_WTL_DLSZ DIALOGEX 0, 0, 246, 144
+STYLE WS_CHILD
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 12, "System", 0, 0, 0x1
+BEGIN
+    LISTBOX         IDC_CONTROL_LIST,7,7,175,63,LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_USETABSTOPS | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_TOKEN_LIST,7,75,175,58,LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Add Resize",IDC_ADDDLSZ_BTN,189,7,50,14
+    PUSHBUTTON      "Del Resize",IDC_DELDLSZ_BTN,189,28,50,14
+END
+
+IDD_WTL_EDIT_DLSZ_DIALOG DIALOG DISCARDABLE  0, 0, 231, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit WTL DialogResize"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,174,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,174,24,50,14
+    LTEXT           "Object ID",IDC_STATIC,7,7,31,8
+    COMBOBOX        IDC_OBJECTID_COMBO,63,7,88,30,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "DLSZ_SIZE_X",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,28,62,10
+    CONTROL         "DLSZ_SIZE_Y",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,87,28,63,10
+    CONTROL         "DLSZ_MOVE_X",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,44,66,10
+    CONTROL         "DLSZ_MOVE_Y",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,87,44,67,10
+    CONTROL         "DLSZ_CENTER_X",IDC_CHECK5,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,77,74,10
+    CONTROL         "DLSZ_CENTER_Y",IDC_CHECK6,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,87,77,75,10
+    CONTROL         "DLSZ_REPAINT",IDC_CHECK7,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,60,67,10
+END
+
+IDD_PAGE_NOTIFY DIALOGEX 0, 0, 322, 158
+STYLE WS_CHILD
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 12, "System"
+BEGIN
+    LISTBOX         IDC_CONTROL_LIST,7,13,139,46,LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    LISTBOX         IDC_MENU_LIST,7,62,139,37,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_NOTIFY_LIST,149,12,112,87,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_NOTIFY_TOKEN_LIST,7,109,254,42,LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Dialog Controls:",IDC_STATIC,7,3,53,8
+    LTEXT           "Menu Items:",IDC_STATIC,62,3,41,8
+    LTEXT           "Message:",IDC_TYPE_STATIC,128,3,107,8
+    PUSHBUTTON      "Add Message",IDC_ADDNOTIFY_BTN,265,12,50,14
+    PUSHBUTTON      "Del Message",IDC_DELNOTIFY_BTN,265,29,50,14
+    LTEXT           "Member Functions:",IDC_STATIC,7,99,63,8
+    PUSHBUTTON      "Edit Code",IDC_EDITNOTIFY_BTN,265,47,50,14,NOT 
+                    WS_VISIBLE
+END
+
+IDD_PAGE_DDX DIALOGEX 0, 0, 274, 152
+STYLE WS_CHILD
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    LISTBOX         IDC_CONTROL_LIST,7,7,206,65,LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    LISTBOX         IDC_TOKEN_LIST,7,80,206,65,LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Add DDX",IDC_ADDDDX_BTN,217,14,50,14
+    PUSHBUTTON      "Del DDX",IDC_DELDDX_BTN,217,34,50,14
+END
+
+IDD_ADD_DDX_DIALOG DIALOG DISCARDABLE  0, 0, 210, 162
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Add DDX/DDV Dialog"
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_VAR_EDIT,7,44,111,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_DDXTYPE_COMBO,7,70,111,66,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_VARTYPE_COMBO,7,93,111,62,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_OBJECTID_COMBO,7,20,111,30,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,153,21,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,153,38,50,14
+    LTEXT           "Object ID",IDC_STATIC,8,9,31,8
+    LTEXT           "Member variable name:",IDC_STATIC,7,35,78,8
+    LTEXT           "DDX type:",IDC_STATIC,7,61,34,8
+    LTEXT           "Variable Type",IDC_STATIC,7,84,46,8
+    EDITTEXT        IDC_LEN_EDIT,7,116,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MIN_EDIT,7,140,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MAX_EDIT,58,140,40,14,ES_AUTOHSCROLL
+    LTEXT           "DDX_TEXT_LEN",IDC_STATIC,7,107,54,8
+    LTEXT           "DDX_INI_RANGE ( UINT / FLOAT / FLOAT_P )",IDC_STATIC,7,
+                    131,145,8
+END
+
+IDD_PAGE_UPUI DIALOGEX 0, 0, 240, 140
+STYLE WS_CHILD
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    LISTBOX         IDC_RESOURCE_LIST,7,7,167,60,LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    LISTBOX         IDC_TOKEN_LIST,7,70,167,63,LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Add UpdateUI",IDC_ADDUPUI_BTN,183,7,50,14
+    PUSHBUTTON      "Del UpdateUI",IDC_DELUPUI_BTN,183,23,50,14
+END
+
+IDD_ADD_UPUI_DIALOG DIALOG DISCARDABLE  0, 0, 200, 126
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "UpdateUI Edit Dialog"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,143,21,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,143,38,50,14
+    LTEXT           "Object ID",IDC_STATIC,8,9,31,8
+    LTEXT           "Type",IDC_STATIC,7,34,17,8
+    EDITTEXT        IDC_RESTYPE_EDIT,8,44,84,14,ES_AUTOHSCROLL
+    CONTROL         "MENUPOPUP",IDC_MENUPOPUP_CHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,61,88,10
+    CONTROL         "MENUBAR",IDC_MENUBAR_CHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,73,88,10
+    CONTROL         "CHILDWINDOW",IDC_CHILDWINDOW_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,85,88,10
+    CONTROL         "TOOLBAR",IDC_TOOLBAR_CHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,97,88,10
+    CONTROL         "STATUSBAR",IDC_STATUSBAR_CHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,7,109,88,10
+    EDITTEXT        IDC_OBJECTID_EDIT,7,19,85,14,ES_AUTOHSCROLL
+END
+
+IDD_PAGE_EVENT DIALOGEX 0, 0, 251, 153
+STYLE WS_CHILD
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 12, "System", 0, 0, 0x1
+BEGIN
+    LISTBOX         IDC_EVENT_LIST,107,32,68,50,LBS_SORT | 
+                    LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_TOKEN_LIST,11,95,177,48,LBS_SORT | 
+                    LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Add Event",IDC_ADDEVENT_BTN,194,13,50,14
+    PUSHBUTTON      "Del Event",IDC_DELEVENT_BTN,194,31,50,14
+    CONTROL         "Tree1",IDC_EVENT_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,33,33,59,52
+    CONTROL         "",IDC_EVENT_SPLIT,"Static",SS_BLACKFRAME,11,13,177,79,
+                    WS_EX_TRANSPARENT
+    CONTROL         "",IDC_FRMPANEL,"Static",SS_BLACKFRAME,7,10,184,136,
+                    WS_EX_STATICEDGE
+END
+
+IDD_ADD_WTLEVENT_DIALOG DIALOG DISCARDABLE  0, 0, 306, 157
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit WTL message dialog"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,249,16,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,249,33,50,14
+    EDITTEXT        IDC_MSG_EDIT,7,16,106,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_FUNCNAME_EDIT,7,39,107,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_FUNC_EDIT,7,63,292,48,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | WS_VSCROLL
+    LTEXT           "MESSAGE:",IDC_STATIC,7,7,36,8
+    LTEXT           "Function Name:",IDC_STATIC,7,30,52,8
+    LTEXT           "Function Preview:",IDC_STATIC,7,54,59,8
+    CONTROL         "ATL Message",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,7,116,60,10
+    CONTROL         "ATL Message crack (un use atlcrack.h)",IDC_RADIO2,
+                    "Button",BS_AUTORADIOBUTTON,7,128,140,10
+    CONTROL         "WTL Message crack (use atlcrack.h)",IDC_RADIO3,"Button",
+                    BS_AUTORADIOBUTTON,7,140,133,10
+END
+
+IDD_PAGE_TOOLS DIALOGEX 0, 0, 187, 94
+STYLE WS_CHILD
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+END
+
+IDD_PAGE_APPWIZARD DIALOGEX 0, 0, 231, 160
+STYLE WS_CHILD
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&Go",IDC_GO_BTN,194,7,30,14
+    CONTROL         "List1",IDC_APPWIZARD_LIST,"SysListView32",LVS_LIST | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | 
+                    LVS_NOLABELWRAP | WS_BORDER | WS_TABSTOP,70,7,120,82
+    EDITTEXT        IDC_APPWIZARD_INFO,7,93,217,60,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL
+    CONTROL         "Tree1",IDC_ROOT_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    TVS_FULLROWSELECT | WS_BORDER | WS_TABSTOP,7,7,60,82
+END
+
+IDD_PAGE_SETUP DIALOGEX 0, 0, 219, 105
+STYLE WS_CHILD
+EXSTYLE WS_EX_CLIENTEDGE
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    CONTROL         "Enable VisualFC for WTL ",IDC_ENABLE_WTL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,7,99,10
+    CONTROL         "Enable VisualFC for WinxGui",IDC_ENABLE_WINX,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,21,110,10
+    CONTROL         "Enable Application Wizard",IDC_ENABLE_APPWIZARD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,35,102,10
+    CONTROL         "Enable Code Wizard",IDC_ENABLE_CODEWIZARD,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,49,83,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_WIZARD_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 389
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 242
+    END
+
+    IDD_PAGE_WINX_EVENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 284
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 131
+    END
+
+    IDD_PAGE_WINX_NOTIFY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 315
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 147
+    END
+
+    IDD_ADD_NOTIFY_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 202
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 51
+    END
+
+    IDD_PAGE_CLASSINFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 193
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 151
+    END
+
+    IDD_PAGE_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 202
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 132
+    END
+
+    IDD_WINX_EDIT_DLSZ_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 216
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 92
+    END
+
+    IDD_PAGE_FONT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 133
+    END
+
+    IDD_PAGE_DLSZ, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 239
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 133
+    END
+
+    IDD_PAGE_WTL_DLSZ, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 239
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 137
+    END
+
+    IDD_WTL_EDIT_DLSZ_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 224
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_PAGE_NOTIFY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 315
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 151
+    END
+
+    IDD_PAGE_DDX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 267
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 145
+    END
+
+    IDD_ADD_DDX_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 203
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 155
+    END
+
+    IDD_PAGE_UPUI, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 133
+    END
+
+    IDD_ADD_UPUI_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 193
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 119
+    END
+
+    IDD_PAGE_EVENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 244
+        TOPMARGIN, 10
+        BOTTOMMARGIN, 146
+    END
+
+    IDD_ADD_WTLEVENT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 299
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 150
+    END
+
+    IDD_PAGE_TOOLS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_PAGE_APPWIZARD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 224
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_PAGE_SETUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 212
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 98
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_IMAGE               BITMAP  DISCARDABLE     "image.bmp"
+IDR_PROP_TOOLBAR        BITMAP  DISCARDABLE     "prop_too.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_PROP_TOOLBAR TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_PROP_KIND
+    BUTTON      ID_PROP_LIST
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROJNAME            "FCWizard"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_PROP_CLASS           "By Class\nBy Class"
+    ID_PROP_ABC             "By List\nBy List"
+    ID_PROP_KIND            "By Kind\nBy Kind"
+    ID_PROP_LIST            "By List\nBy List"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "FCWizard.tlb"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
