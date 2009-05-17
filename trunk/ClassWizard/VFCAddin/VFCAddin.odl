@@ -1,0 +1,61 @@
+// VFCAddin.odl : type library source for VFCAddin.dll
+
+// This file will be processed by the Make Type Library (mktyplib) tool to
+// produce the type library (VFCAddin.tlb).
+#ifdef EVC4
+[	uuid(A89A86CB-D1A8-449E-AF05-8E14D1AE8431), version(1.0),
+	helpstring ("VFCADDIN EVC Studio Add-in") ]
+#else
+[	uuid(A89A86CB-D1A8-449E-AF05-8E14D1AE8430), version(1.0),
+	helpstring ("VFCADDIN Developer Studio Add-in") ]
+#endif
+library VFCAddin
+{
+	importlib("stdole32.tlb");
+	importlib("devshl.dll");
+	importlib("ide\devdbg.pkg");
+	
+
+	//  Dual interface for CCommands
+	//
+	//  All commands that your add-in adds to DevStudio
+	//   must appear in this interface.  You may use the
+	//   ClassView to add methods to this interface, which
+	//   will cause stub implementations of those methods to
+	//   appear in your CCommands class.
+	
+	[	uuid(390E5A7E-D80C-4C7B-917A-923DADC8752F),
+		oleautomation,
+		dual
+	]
+
+	interface ICommands : IDispatch
+	{
+		// methods
+		[id(1)]
+		HRESULT VFCAddinCommandMethod();
+	};
+
+	//  Class information for CCommands
+
+	[ uuid(A95A358E-C3A7-4515-81E5-EEFB88609D76) ]
+	coclass Commands
+	{
+		[default] interface ICommands;
+	};
+
+	[ hidden, uuid(FA844F9D-F74D-4FE5-921F-A5B6A21E3EAE) ]
+	coclass ApplicationEvents
+	{
+		[default] interface IApplicationEvents;
+	}
+
+	[ hidden, uuid(12057C1C-026F-4231-BE2E-3131B68B00DE) ]
+	coclass DebuggerEvents
+	{
+		[default] interface IDebuggerEvents;
+	}
+
+	//{{AFX_APPEND_ODL}}
+	//}}AFX_APPEND_ODL}}
+};

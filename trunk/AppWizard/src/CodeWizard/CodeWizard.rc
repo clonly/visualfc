@@ -1,0 +1,167 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CODEBASE_PAGE DIALOG DISCARDABLE  0, 0, 305, 196
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_CLASSNAME_EDIT,7,17,78,14,ES_AUTOHSCROLL
+    LTEXT           "Class Name:",IDC_STATIC,9,8,54,8
+    LTEXT           "Base Class:",IDC_STATIC,7,88,49,8
+    COMBOBOX        IDC_BASECLASS_COMBO,7,99,108,93,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Files Name:",IDC_STATIC,7,32,93,8
+    EDITTEXT        IDC_FILENAME_EDIT,7,43,163,14,ES_AUTOHSCROLL
+    CONTROL         "Use Cpp Files",IDC_USE_CPPFILES,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,116,68,10
+    CONTROL         "Use stdafx.h",IDC_USE_STDAFX,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,49,128,64,10
+    CONTROL         "Use resource.h",IDC_USE_RESOURCE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,118,128,72,10
+    CONTROL         "Class Construction",IDC_USE_CONSTRUCTION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,144,88,10
+    CONTROL         "Class Destruction",IDC_USE_DESTRUCTION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,157,84,10
+    CONTROL         "Use guid type include file name symbol",
+                    IDC_USE_GUIDSYSBOL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    7,172,168,10
+    PUSHBUTTON      "&Change",IDC_FILENAME_BTN,175,42,50,14
+    LTEXT           "Dialog ID:",IDC_STATIC,117,88,41,8
+    COMBOBOX        IDC_DIALOGID_COMBO,117,99,108,110,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_PROJECTPATH_EDIT,7,70,163,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Change",IDC_PROJECTPATH_BTN,175,70,50,14
+    LTEXT           "Project Path:",IDC_STATIC,7,60,53,8
+END
+
+IDD_CODEEXT_PAGE DIALOG DISCARDABLE  0, 0, 326, 185
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_CODEEXT_LIST,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,7,7,312,171
+END
+
+IDD_CONFIRM_DLG DIALOG DISCARDABLE  0, 0, 259, 245
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New Code Infomation"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,143,224,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,202,224,50,14
+    EDITTEXT        IDC_INFO_EDIT,7,7,245,174,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | WS_VSCROLL
+    LTEXT           "Project Directory:",IDC_STATIC,7,189,110,8
+    EDITTEXT        IDC_PROJECT_PATH,7,204,173,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_CODEBASE_PAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 298
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 182
+    END
+
+    IDD_CODEEXT_PAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 319
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+
+    IDD_CONFIRM_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 252
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 238
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_HEADER              BITMAP  DISCARDABLE     "res\\header.bmp"
+IDB_WTL                 BITMAP  DISCARDABLE     "res\\WTL.bmp"
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

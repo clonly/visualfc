@@ -1,0 +1,26 @@
+HKCR
+{
+	VFCAddinNET.Connect.1 = s 'Connect Class'
+	{
+		CLSID = s '{7C01827B-4FA2-4FFE-9963-D6F158ADE304}'
+	}
+	VFCAddinNET.Connect = s 'Connect Class'
+	{
+		CLSID = s '{7C01827B-4FA2-4FFE-9963-D6F158ADE304}'
+		CurVer = s 'VFCAddinNET.Connect.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove '{7C01827B-4FA2-4FFE-9963-D6F158ADE304}' = s 'Connect Class'
+		{
+			ProgID = s 'VFCAddinNET.Connect.1'
+			VersionIndependentProgID = s 'VFCAddinNET.Connect'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{7B95A307-0440-45EA-9A60-F2478DB24CD9}'
+		}
+	}
+}

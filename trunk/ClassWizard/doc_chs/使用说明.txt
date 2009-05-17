@@ -1,0 +1,20 @@
+欢迎使用 VisualFC for VS60/VS2003/VS2005/VS2008 Add-in
+
+
+一 安装
+
+VS60菜单 Tools->Customeze...->Add-ins and Macro Files ->Browse...
+选择VFCAddin.dll安装即可，安装后插件名为 FreeCode for VS60 Add-in,
+安装后将有一个新的VisualFC工具栏,目前只有一个功能按钮-类向导,名称为"VisualFC".
+
+VS2003/VS2005/vs2008安装
+首先注册VFCAddinNET.dll，运行RegVFCAddinNET.bat或直接执行regsvr32.exe VFCAddinNET.dll即可
+运行InstallVS2003/2005/2008将安装到Visual Studio对应版本
+然后打开VS2003/VS2005/VS2008->工具->自定义->命令->外接程序
+将VisualFC拖到工具栏上即可。
+
+二 项目主页
+http://code.google.com/p/visualfc
+
+三 中文说明
+http://blog.csdn.net/visualfc
