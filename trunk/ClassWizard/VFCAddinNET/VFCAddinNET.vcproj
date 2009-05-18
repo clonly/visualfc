@@ -54,9 +54,7 @@
 				InterfaceIdentifierFileName="AddIn_i.c"
 				ProxyFileName="AddIn_p.c"/>
 			<Tool
-				Name="VCPostBuildEventTool"
-				Description="Performing registration"
-				CommandLine="regsvr32 /s /c &quot;$(TargetPath)&quot;"/>
+				Name="VCPostBuildEventTool"/>
 			<Tool
 				Name="VCPreBuildEventTool"/>
 			<Tool
@@ -125,9 +123,7 @@
 				InterfaceIdentifierFileName="AddIn_i.c"
 				ProxyFileName="AddIn_p.c"/>
 			<Tool
-				Name="VCPostBuildEventTool"
-				Description="Performing registration"
-				CommandLine="regsvr32 /s /c &quot;$(TargetPath)&quot;"/>
+				Name="VCPostBuildEventTool"/>
 			<Tool
 				Name="VCPreBuildEventTool"/>
 			<Tool
