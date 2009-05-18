@@ -6,7 +6,7 @@ struct wtl_event;
 struct page_event_peer
 {
 	virtual ~page_event_peer(){}
-	virtual init_tag(tag_token & tag) = 0;
+	virtual void init_tag(tag_token & tag) = 0;
 	virtual bool find_token(Token * tk) = 0;	
 	virtual bool init_event(codeparser * pcode, HWND hWndTree, HWND hWndList, CAtlArray<HTREEITEM> * pItems) = 0;
 	virtual int	add_tklist(HWND hWndList, Token * tk) = 0;
@@ -190,7 +190,7 @@ public:
 		return -1;
 	}
 
-	HTREEITEM FindEventTree(LPCSTR name)
+	HTREEITEM FindEventTree(LPCTSTR name)
 	{
 		for (size_t i = 0; i < m_tree_items.GetCount(); i++)
 		{
@@ -205,6 +205,7 @@ public:
 	
 	LRESULT OnLbnSelchangeTokenList(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandled)
 	{
+        USES_CONVERSION;
 		int index = m_tkList.GetCurSel();
 		if (index == -1)
 		{
@@ -215,8 +216,7 @@ public:
 		{
 			CString text;
 			m_tkList.GetTextEx(index,0,text);
-
-			int i = FindEventList(text);
+			int i = FindEventList( T2CA((LPCTSTR)text));
 			m_evList.SetCurSel(i);
 
 			HTREEITEM item = FindEventTree(text);

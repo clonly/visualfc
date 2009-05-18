@@ -53,7 +53,7 @@ class ParserThread : public cbThreadPoolTask
 		wxString GetActualTokenType();
 	private:
 		void Log(const wxString& log);
-		Token* TokenExists(const wxString& name, Token* parent = 0, short int kindMask = 0xFFFF); // if parent is 0, all tokens are searched
+		Token* TokenExists(const wxString& name, Token* parent = NULL, short int kindMask = -1); // if parent is 0, all tokens are searched
 		Tokenizer m_Tokens;
 		wxEvtHandler* m_pParent;
 		TokensArray* m_pTokens;

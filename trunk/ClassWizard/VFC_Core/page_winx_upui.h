@@ -44,9 +44,9 @@ public:
 		m_peer = new page_winx_upui_peer();
 		m_peer->init_tag(m_tag);
 	}
-	const char * page_name()
+	const TCHAR * page_name()
 	{
-		return "Winx UpdateUI";
+		return _T("Winx UpdateUI");
 	}
 };
 

@@ -1,0 +1,954 @@
+// Generated .IDL file (by the OLE/COM Object Viewer)
+// 
+// typelib filename: devshl.dll
+
+[
+  uuid(B3CF8E20-19B6-11CF-8E4D-00AA004254C4),
+  version(6.0),
+  helpstring("Visual C++ Shared Objects")
+]
+library DSSharedObjects
+{
+    // TLib :     // TLib : OLE Automation : {00020430-0000-0000-C000-000000000046}
+    importlib("stdole2.tlb");
+
+    // Forward declare all types defined in this typelib
+    interface IGenericDocument;
+    interface IGenericWindow;
+    interface IGenericProject;
+    interface IApplication;
+    dispinterface IDispApplication;
+    interface IApplicationEvents;
+    dispinterface IDispApplicationEvents;
+    interface IDocuments;
+    dispinterface IDispDocuments;
+    interface IWindows;
+    dispinterface IDispWindows;
+    interface IProjects;
+    dispinterface IDispProjects;
+    dispinterface IDispGenericDocument;
+    dispinterface IDispGenericWindow;
+    dispinterface IDispGenericProject;
+    interface IDSAddIn;
+
+    typedef [helpstring("Represents the possible states of a window.")]
+    enum {
+        dsWindowStateMaximized = 1,
+        dsWindowStateMinimized = 2,
+        dsWindowStateNormal = 3
+    } DsWindowState;
+
+    typedef [helpstring("Passed to Windows.Arrange to arrange the windows.")]
+    enum {
+        dsMinimize = 1,
+        dsTileHorizontal = 2,
+        dsTileVertical = 3,
+        dsCascade = 4
+    } DsArrangeStyle;
+
+    typedef [helpstring("Represents the button type.")]
+    enum {
+        dsGlyph = 1,
+        dsText = 2
+    } DsButtonType;
+
+    typedef [helpstring("Indicates what to do with changes when closing a file.")]
+    enum {
+        dsSaveChangesYes = 1,
+        dsSaveChangesNo = 2,
+        dsSaveChangesPrompt = 3
+    } DsSaveChanges;
+
+    typedef [helpstring("Represents the result of a save operation.")]
+    enum {
+        dsSaveSucceeded = 1,
+        dsSaveCanceled = 2
+    } DsSaveStatus;
+
+    [
+      odl,
+      uuid(FB7FDAE1-89B8-11CF-9BE8-00A0C90A632C),
+      helpstring("Represents an open document."),
+      hidden,
+      dual,
+      oleautomation
+    ]
+    interface IGenericDocument : IDispatch {
+        [id(00000000), propget, helpstring("Returns the name of the document.")]
+        HRESULT Name([out, retval] BSTR* pName);
+        [id(0x00000001), propget, helpstring("Returns the name of the document including the path.")]
+        HRESULT FullName([out, retval] BSTR* pName);
+        [id(0x00000002), propget, helpstring("Returns the Developer Studio Application object")]
+        HRESULT Application([out, retval] IDispatch** ppApplication);
+        [id(0x00000003), propget, helpstring("Returns the Developer Studio Application object")]
+        HRESULT Parent([out, retval] IDispatch** ppParent);
+        [id(0x00000004), propget, helpstring("Returns the pathname of the document. Never has a trailing backslash.")]
+        HRESULT Path([out, retval] BSTR* pPath);
+        [id(0x00000005), propget, helpstring("Returns False if document has changed since it was last saved.")]
+        HRESULT Saved([out, retval] VARIANT_BOOL* pSaved);
+        [id(0x00000006), propget, helpstring("Returns the active window for this document.")]
+        HRESULT ActiveWindow([out, retval] IDispatch** ppWindow);
+        [id(0x00000007), propget, helpstring("Returns/sets whether a document can be changed inside Developer Studio.")]
+        HRESULT ReadOnly([out, retval] VARIANT_BOOL* pReadOnly);
+        [id(0x00000007), propput, helpstring("Returns/sets whether a document can be changed inside Developer Studio.")]
+        HRESULT ReadOnly([in] VARIANT_BOOL pReadOnly);
+        [id(0x00000008), propget, helpstring("Returns a string describing the type of the document. Most documents return 'Generic'.")]
+        HRESULT Type([out, retval] BSTR* pType);
+        [id(0x00000009), propget, helpstring("Returns a Windows collection containing the windows associated with this document.")]
+        HRESULT Windows([out, retval] IDispatch** ppWindows);
+        [id(0x0000000a), propput, helpstring("Returns/sets the active state of the window.")]
+        HRESULT Active([in] VARIANT_BOOL pbActive);
+        [id(0x0000000a), propget, helpstring("Returns/sets the active state of the window.")]
+        HRESULT Active([out, retval] VARIANT_BOOL* pbActive);
+        [id(0x0000000b), helpstring("Creates a new window for this document.")]
+        HRESULT NewWindow([out, retval] IDispatch** ppWindow);
+        [id(0x0000000c), helpstring("Saves the document to disk.")]
+        HRESULT Save(
+                        [in, optional] VARIANT vFilename, 
+                        [in, optional] VARIANT vBoolPrompt, 
+                        [out, retval] DsSaveStatus* pSaved);
+        [id(0x0000000d), helpstring("Reverses previous editing actions. Has no effect on 'Generic' documents.")]
+        HRESULT Undo([out, retval] VARIANT_BOOL* pSuccess);
+        [id(0x0000000e), helpstring("Reapplies previous editing actions. Has no effect on 'Generic' documents.")]
+        HRESULT Redo([out, retval] VARIANT_BOOL* pSuccess);
+        [id(0x0000000f), helpstring("Sends the document to the current printer. Has no effect on 'Generic' documents.")]
+        HRESULT PrintOut([out, retval] VARIANT_BOOL* pSuccess);
+        [id(0x00000010), helpstring("Closes the document.")]
+        HRESULT Close(
+                        [in, optional] VARIANT vSaveChanges, 
+                        [out, retval] DsSaveStatus* pSaved);
+        [id(0x00000032), restricted, hidden]
+        HRESULT Reserved1();
+        [id(0x00000033), restricted, hidden]
+        HRESULT Reserved2();
+        [id(0x00000034), restricted, hidden]
+        HRESULT Reserved3();
+        [id(0x00000035), restricted, hidden]
+        HRESULT Reserved4();
+        [id(0x00000036), restricted, hidden]
+        HRESULT Reserved5();
+        [id(0x00000037), restricted, hidden]
+        HRESULT Reserved6();
+        [id(0x00000038), restricted, hidden]
+        HRESULT Reserved7();
+        [id(0x00000039), restricted, hidden]
+        HRESULT Reserved8();
+        [id(0x0000003a), restricted, hidden]
+        HRESULT Reserved9();
+        [id(0x0000003b), restricted, hidden]
+        HRESULT Reserved10();
+    };
+
+    [
+      odl,
+      uuid(FD20FC80-A9D2-11CF-9C13-00A0C90A632C),
+      helpstring("Represents the MDI client windows."),
+      hidden,
+      dual,
+      oleautomation
+    ]
+    interface IGenericWindow : IDispatch {
+        [id(00000000), propget, helpstring("Returns the caption of a window.")]
+        HRESULT Caption([out, retval] BSTR* pbstrCaption);
+        [id(0x00000001), propget, helpstring("Returns a string describing the type of the window. Most windows return 'Generic'.")]
+        HRESULT Type([out, retval] BSTR* pbstrCaption);
+        [id(0x00000002), propput, helpstring("Returns/sets the active state of the window.")]
+        HRESULT Active([in] VARIANT_BOOL pbActive);
+        [id(0x00000002), propget, helpstring("Returns/sets the active state of the window.")]
+        HRESULT Active([out, retval] VARIANT_BOOL* pbActive);
+        [id(0x00000003), propput, helpstring("Returns/sets the coordinate for the left edge of the window.")]
+        HRESULT Left([in] long plVal);
+        [id(0x00000003), propget, helpstring("Returns/sets the coordinate for the left edge of the window.")]
+        HRESULT Left([out, retval] long* plVal);
+        [id(0x00000004), propput, helpstring("Returns/sets the coordinate for the top of the window.")]
+        HRESULT Top([in] long plVal);
+        [id(0x00000004), propget, helpstring("Returns/sets the coordinate for the top of the window.")]
+        HRESULT Top([out, retval] long* plVal);
+        [id(0x00000005), propput, helpstring("Returns/sets the height of the window.")]
+        HRESULT Height([in] long plVal);
+        [id(0x00000005), propget, helpstring("Returns/sets the height of the window.")]
+        HRESULT Height([out, retval] long* plVal);
+        [id(0x00000006), propput, helpstring("Returns/sets the width of the window.")]
+        HRESULT Width([in] long plVal);
+        [id(0x00000006), propget, helpstring("Returns/sets the width of the window.")]
+        HRESULT Width([out, retval] long* plVal);
+        [id(0x00000007), propget, helpstring("Returns the one-based ordinal of a window in the Windows collection.")]
+        HRESULT Index([out, retval] long* plVal);
+        [id(0x00000008), propget, helpstring("Returns the next window in the tab sequence.")]
+        HRESULT Next([out, retval] IDispatch** ppDispatch);
+        [id(0x00000009), propget, helpstring("Returns the previous window in the shift-tab sequence.")]
+        HRESULT Previous([out, retval] IDispatch** ppDispatch);
+        [id(0x0000000a), propput, helpstring("Returns the state of the window or maximize, minimize, or restore the window.")]
+        HRESULT WindowState([in] DsWindowState plVal);
+        [id(0x0000000a), propget, helpstring("Returns the state of the window or maximize, minimize, or restore the window.")]
+        HRESULT WindowState([out, retval] DsWindowState* plVal);
+        [id(0x0000000b), propget, helpstring("Returns the Developer Studio Application object")]
+        HRESULT Application([out, retval] IDispatch** ppDispatch);
+        [id(0x0000000c), propget, helpstring("Returns the document associated with this window.")]
+        HRESULT Parent([out, retval] IDispatch** ppDispatch);
+        [id(0x0000000d), helpstring("Close the window.")]
+        HRESULT Close(
+                        [in] VARIANT boolSaveChanges, 
+                        [out, retval] DsSaveStatus* pSaved);
+        [id(0x00000032), restricted, hidden]
+        HRESULT Reserved1();
+        [id(0x00000033), restricted, hidden]
+        HRESULT Reserved2();
+        [id(0x00000034), restricted, hidden]
+        HRESULT Reserved3();
+        [id(0x00000035), restricted, hidden]
+        HRESULT Reserved4();
+        [id(0x00000036), restricted, hidden]
+        HRESULT Reserved5();
+        [id(0x00000037), restricted, hidden]
+        HRESULT Reserved6();
+        [id(0x00000038), restricted, hidden]
+        HRESULT Reserved7();
+        [id(0x00000039), restricted, hidden]
+        HRESULT Reserved8();
+        [id(0x0000003a), restricted, hidden]
+        HRESULT Reserved9();
+        [id(0x0000003b), restricted, hidden]
+        HRESULT Reserved10();
+    };
+
+    [
+      odl,
+      uuid(8CA5A960-FC7D-11CF-927D-00A0C9138C45),
+      helpstring("Represents a group of files which can include configurations."),
+      hidden,
+      dual,
+      oleautomation
+    ]
+    interface IGenericProject : IDispatch {
+        [id(00000000), propget, helpstring("Returns the name of the project.")]
+        HRESULT Name([out, retval] BSTR* Name);
+        [id(0x00000001), propget, helpstring("Returns the name of the project including its path.")]
+        HRESULT FullName([out, retval] BSTR* Name);
+        [id(0x00000002), propget, helpstring("Returns the Developer Studio Application object")]
+        HRESULT Application([out, retval] IDispatch** Application);
+        [id(0x00000003), propget, helpstring("Returns the Developer Studio Application object")]
+        HRESULT Parent([out, retval] IDispatch** Parent);
+        [id(0x00000004), propget, helpstring("Returns a string representing the type of the project.")]
+        HRESULT Type([out, retval] BSTR* pType);
+        [id(0x00000032), restricted, hidden]
+        HRESULT Reserved1();
+        [id(0x00000033), restricted, hidden]
+        HRESULT Reserved2();
+        [id(0x00000034), restricted, hidden]
+        HRESULT Reserved3();
+        [id(0x00000035), restricted, hidden]
+        HRESULT Reserved4();
+        [id(0x00000036), restricted, hidden]
+        HRESULT Reserved5();
+        [id(0x00000037), restricted, hidden]
+        HRESULT Reserved6();
+        [id(0x00000038), restricted, hidden]
+        HRESULT Reserved7();
+        [id(0x00000039), restricted, hidden]
+        HRESULT Reserved8();
+        [id(0x0000003a), restricted, hidden]
+        HRESULT Reserved9();
+        [id(0x0000003b), restricted, hidden]
+        HRESULT Reserved10();
+    };
+
+    // NOTE: This module has no entry points and thus is invalid.
+    //       There is no way to extract the dllname of a module
+    //       with no entry points
+    // 
+    [
+      dllname("<invalid typelib>")
+    ]
+    module DsProjectTypes {
+        const LPSTR dsApplication = "Application";
+        const LPSTR dsDLL = "DLL";
+        const LPSTR dsConsoleApp = "Console Application";
+        const LPSTR dsStaticLib = "Static Library";
+        const LPSTR dsUtility = "Utility";
+        const LPSTR dsMakefile = "Makefile";
+        const LPSTR dsFortran1 = "QuickWin Application";
+        const LPSTR dsFortran2 = "Standard Graphics Application";
+    };
+
+    [
+      odl,
+      uuid(EC1D73A1-8CC4-11CF-9BE9-00A0C90A632C),
+      helpstring("Application Object for Microsoft Developer Studio."),
+      hidden,
+      dual,
+      oleautomation
+    ]
+    interface IApplication : IDispatch {
+        [id(0x00000001), propget, helpstring("Returns/sets the height of Developer Studio's main window.")]
+        HRESULT Height([out, retval] long* Height);
+        [id(0x00000001), propput, helpstring("Returns/sets the height of Developer Studio's main window.")]
+        HRESULT Height([in] long Height);
+        [id(0x00000002), propget, helpstring("Returns/sets the width of Developer Studio's main window.")]
+        HRESULT Width([out, retval] long* Width);
+        [id(0x00000002), propput, helpstring("Returns/sets the width of Developer Studio's main window.")]
+        HRESULT Width([in] long Width);
+        [id(0x00000003), propget, helpstring("Returns/sets the coordinate of the top edge of Developer Studio's main window.")]
+        HRESULT Top([out, retval] long* Top);
+        [id(0x00000003), propput, helpstring("Returns/sets the coordinate of the top edge of Developer Studio's main window.")]
+        HRESULT Top([in] long Top);
+        [id(0x00000004), propget, helpstring("Returns/sets the coordinate of the left edge of Developer Studio's main window.")]
+        HRESULT Left([out, retval] long* Left);
+        [id(0x00000004), propput, helpstring("Returns/sets the coordinate of the left edge of Developer Studio's main window.")]
+        HRESULT Left([in] long Left);
+        [id(00000000), propget, helpstring("Returns the name of the application (Microsoft Developer Studio).")]
+        HRESULT Name([out, retval] BSTR* Name);
+        [id(0x00000012), propget, helpstring("Returns the TextEditor object.")]
+        HRESULT TextEditor([out, retval] IDispatch** TextEditor);
+        [id(0x00000007), propget, helpstring("Returns a string representing the version of Developer Studio.")]
+        HRESULT Version([out, retval] BSTR* Version);
+        [id(0x00000008), propget, helpstring("Returns the path of the executable for Developer Studio.")]
+        HRESULT Path([out, retval] BSTR* Path);
+        [id(0x00000009), propget, helpstring("Returns/sets the current directory used by File.Open.")]
+        HRESULT CurrentDirectory([out, retval] BSTR* CurrentDirectory);
+        [id(0x00000009), propput, helpstring("Returns/sets the current directory used by File.Open.")]
+        HRESULT CurrentDirectory([in] BSTR CurrentDirectory);
+        [id(0x0000000a), propget, helpstring("Returns the filename and pathname to the Developer Studio executable.")]
+        HRESULT FullName([out, retval] BSTR* FullName);
+        [id(0x0000000b), propget, helpstring("Returns the Developer Studio Application object")]
+        HRESULT Application([out, retval] IDispatch** Application);
+        [id(0x0000000c), propget, helpstring("Returns the Developer Studio Application object")]
+        HRESULT Parent([out, retval] IDispatch** Parent);
+        [id(0x0000000d), propget, helpstring("Returns the active Document object.")]
+        HRESULT ActiveDocument([out, retval] IDispatch** ActiveDocument);
+        [id(0x0000000e), propget, helpstring("Returns the Windows object filles with the MDI child windows.")]
+        HRESULT Windows([out, retval] IDispatch** Windows);
+        [id(0x0000000f), propget, helpstring("Returns the Documents object.")]
+        HRESULT Documents([out, retval] IDispatch** Documents);
+        [id(0x00000010), propget, helpstring("Returns the active MDI child window.")]
+        HRESULT ActiveWindow([out, retval] IDispatch** ActiveWindow);
+        [id(0x00000011), propget, helpstring("Returns/Sets the current state of Developer Studio's main window.")]
+        HRESULT WindowState([out, retval] DsWindowState* WindowState);
+        [id(0x00000011), propput, helpstring("Returns/Sets the current state of Developer Studio's main window.")]
+        HRESULT WindowState([in] DsWindowState WindowState);
+        [id(0x00000006), propget, helpstring("Returns the Debugger object.")]
+        HRESULT Debugger([out, retval] IDispatch** ppDebugger);
+        [id(0x00000013), propget, helpstring("Returns the Projects collection.")]
+        HRESULT Projects([out, retval] IDispatch** Projects);
+        [id(0x00000014), propget, helpstring("Returns/Sets the active Configuration object of the active project.")]
+        HRESULT ActiveConfiguration([out, retval] IDispatch** ActiveConfiguration);
+        [id(0x00000014), propput, helpstring("Returns/Sets the active Configuration object of the active project.")]
+        HRESULT ActiveConfiguration([in] IDispatch* ActiveConfiguration);
+        [id(0x0000001d), propget, helpstring("Returns/sets whether the Developer Studio main window is visible.")]
+        HRESULT Visible([out, retval] VARIANT_BOOL* Visible);
+        [id(0x0000001d), propput, helpstring("Returns/sets whether the Developer Studio main window is visible.")]
+        HRESULT Visible([in] VARIANT_BOOL Visible);
+        [id(0x0000001e), propget, helpstring("Returns/Sets the active Project object of the workspace.")]
+        HRESULT ActiveProject([out, retval] IDispatch** ActiveProject);
+        [id(0x0000001e), propput, helpstring("Returns/Sets the active Project object of the workspace.")]
+        HRESULT ActiveProject([in] IDispatch* ActiveProject);
+        [id(0x00020003), propput, helpstring("Returns/Sets whether Developer Studio's main window is the foreground window.")]
+        HRESULT Active([in] VARIANT_BOOL pbActive);
+        [id(0x00020003), propget, helpstring("Returns/Sets whether Developer Studio's main window is the foreground window.")]
+        HRESULT Active([out, retval] VARIANT_BOOL* pbActive);
+        [id(0x00000015), helpstring("Provides access to objects provided by third parties which extend Developer Studio.")]
+        HRESULT GetPackageExtension(
+                        [in] BSTR szExtensionName, 
+                        [out, retval] IDispatch** pExt);
+        [id(0x00000016), helpstring("Quits Developer Studio.")]
+        HRESULT Quit();
+        [id(0x00000017), helpstring("Prints text to the output window.")]
+        HRESULT PrintToOutputWindow([in] BSTR Message);
+        [id(0x00000018), helpstring("Executes a command or VBScript macro.")]
+        HRESULT ExecuteCommand([in] BSTR szCommandName);
+        [id(0x00000019), helpstring("Creates a toolbar and toolbar buttons. Can only be called by AddIns.")]
+        HRESULT AddCommandBarButton(
+                        [in] long nButtonType, 
+                        [in] BSTR szCmdName, 
+                        [in] long dwCookie);
+        [id(0x0000001a), helpstring("Binds keystrokes to a command or VBStript macro.")]
+        HRESULT AddKeyBinding(
+                        [in] BSTR szKey, 
+                        [in] BSTR szCommandName, 
+                        [in] BSTR szEditor);
+        [id(0x0000001b), helpstring("Builds a specified configuration by processing only the files that have changed.")]
+        HRESULT Build([in, optional] VARIANT Configuration);
+        [id(0x0000001c), helpstring("Rebuilds all files in a specified configuration.")]
+        HRESULT RebuildAll([in, optional] VARIANT Configuration);
+        [id(0x0000001f), helpstring("Runs the program specified by the active configuration outside of the debugger.")]
+        HRESULT ExecuteConfiguration([in, optional] VARIANT Reserved);
+        [id(0x00020001), helpstring("Provides Developer Studio with information about AddIns. Can only be called by AddIns.")]
+        HRESULT SetAddInInfo(
+                        [in] long nInstanceHandle, 
+                        [in] IDispatch* pCmdDispatch, 
+                        [in] long nIDBitmapResourceMedium, 
+                        [in] long nIDBitmapResourceLarge, 
+                        [in] long dwCookie);
+        [id(0x00020002), helpstring("Adds a command defined by an Add-in to Developer Studio. Can only be called by AddIns.")]
+        HRESULT AddCommand(
+                        [in] BSTR szCmdName, 
+                        [in] BSTR szMethodName, 
+                        [in] long nBitmapOffset, 
+                        [in] long dwCookie, 
+                        [out, retval] VARIANT_BOOL* pbResult);
+        [id(0x00020004), helpstring("Enables or disables existing modeless windows in Developer Studio.")]
+        HRESULT EnableModeless([in] VARIANT_BOOL bEnable);
+        [id(0x00000020), helpstring("Deletes all intermediate and output files for a configuration.")]
+        HRESULT Clean([in, optional] VARIANT Configuration);
+        [id(0x00000021), propget, helpstring("Returns the number of errors from the last invocation of build")]
+        HRESULT Errors([out, retval] long* Errors);
+        [id(0x00000022), propget, helpstring("Returns the number of warnings from the last invocation of build")]
+        HRESULT Warnings([out, retval] long* Warnings);
+        [id(0x00000023), helpstring("Inserts a newly created project into the workspace.")]
+        HRESULT AddProject(
+                        [in] BSTR szName, 
+                        [in] BSTR szPath, 
+                        [in] BSTR szType, 
+                        [in] VARIANT bAddDefaultFolders);
+    };
+
+    [
+      uuid(9FD2DF20-190D-11CF-8E4D-00AA004254C4),
+      hidden
+    ]
+    dispinterface IDispApplication {
+        properties:
+            [id(0x00000001)]
+            long Height;
+            [id(0x00000002)]
+            long Width;
+            [id(0x00000003)]
+            long Top;
+            [id(0x00000004)            ]
+            long Left;
+            [id(0x00000012), readonly            ]
+            IDispatch* TextEditor;
+            [id(0x00000007), readonly            ]
+            BSTR Version;
+            [id(0x00000008), readonly            ]
+            BSTR Path;
+            [id(0x00000009)            ]
+            BSTR CurrentDirectory;
+            [id(0x0000000a), readonly            ]
+            BSTR FullName;
+            [id(0x0000000b), readonly            ]
+            IDispatch* Application;
+            [id(0x0000000c), readonly            ]
+            IDispatch* Parent;
+            [id(0x0000000d), readonly            ]
+            IDispatch* ActiveDocument;
+            [id(0x0000000e), readonly            ]
+            IDispatch* Windows;
+            [id(0x0000000f), readonly            ]
+            IDispatch* Documents;
+            [id(0x00000010), readonly            ]
+            IDispatch* ActiveWindow;
+            [id(0x00000011)            ]
+            long WindowState;
+            [id(0x00000006), readonly            ]
+            IDispatch* Debugger;
+            [id(0x00000013), readonly            ]
+            IDispatch* Projects;
+            [id(0x00000014)            ]
+            IDispatch* ActiveConfiguration;
+            [id(0x0000001d)            ]
+            VARIANT_BOOL Visible;
+            [id(0x0000001e)            ]
+            IDispatch* ActiveProject;
+            [id(0x00000021), readonly            ]
+            long Errors;
+            [id(0x00000022), readonly            ]
+            long Warnings;
+            [id(00000000), readonly            ]
+            BSTR Name;
+            [id(0x00020003)            ]
+            VARIANT_BOOL Active;
+        methods:
+            [id(0x00000015)]
+            IDispatch* GetPackageExtension(BSTR szExtensionName);
+            [id(0x00000016)]
+            void Quit();
+            [id(0x00000017)]
+            void PrintToOutputWindow(BSTR Message);
+            [id(0x00000018)]
+            void ExecuteCommand(BSTR szCommandName);
+            [id(0x00000019)]
+            void AddCommandBarButton(
+                            long nButtonType, 
+                            BSTR szCmdName, 
+                            long dwCookie);
+            [id(0x0000001a)]
+            void AddKeyBinding(
+                            BSTR szKey, 
+                            BSTR szCommandName, 
+                            BSTR szEditor);
+            [id(0x0000001b)]
+            void Build([optional] VARIANT Configuration);
+            [id(0x0000001c)]
+            void RebuildAll([optional] VARIANT Configuration);
+            [id(0x0000001f)]
+            void ExecuteConfiguration([in, optional] VARIANT Reserved);
+            [id(0x00000020)]
+            void Clean([optional] VARIANT Configuration);
+            [id(0x00000023)]
+            void AddProject(
+                            BSTR szName, 
+                            BSTR szPath, 
+                            BSTR szType, 
+                            VARIANT bAddDefaultFolders);
+            [id(0x00020001)]
+            void SetAddInInfo(
+                            long nInstanceHandle, 
+                            IDispatch* pCmdDispatch, 
+                            long nIDBitmapResourceMedium, 
+                            long nIDBitmapResourceLarge, 
+                            long dwCookie);
+            [id(0x00020002)]
+            VARIANT_BOOL AddCommand(
+                            BSTR szCmdName, 
+                            BSTR szMethodName, 
+                            long nBitmapOffset, 
+                            long dwCookie);
+            [id(0x00020004)]
+            void EnableModeless(VARIANT_BOOL bEnable);
+    };
+
+    [
+      odl,
+      uuid(8EA3F900-4A9F-11CF-8E4E-00AA004254C4),
+      helpstring("Events fired by the Developer Studio Application Object."),
+      hidden,
+      dual,
+      oleautomation
+    ]
+    interface IApplicationEvents : IDispatch {
+        [id(0x00000001), helpstring("Fired before a build starts.")]
+        HRESULT BeforeBuildStart();
+        [id(0x00000002), helpstring("Fired when a build finished.")]
+        HRESULT BuildFinish(
+                        [in] long nNumErrors, 
+                        [in] long nNumWarnings);
+        [id(0x00000003), helpstring("Fired before the Developer Studio Applicaiton shuts down.")]
+        HRESULT BeforeApplicationShutDown();
+        [id(0x00000004), helpstring("Fired after a docuement is opened.")]
+        HRESULT DocumentOpen([in] IDispatch* theDocument);
+        [id(0x00000005), helpstring("Fired before a document is closed.")]
+        HRESULT BeforeDocumentClose([in] IDispatch* theDocument);
+        [id(0x00000006), helpstring("Fired after a document has been saved.")]
+        HRESULT DocumentSave([in] IDispatch* theDocument);
+        [id(0x00000007), helpstring("Fired after a new document has been created.")]
+        HRESULT NewDocument([in] IDispatch* theDocument);
+        [id(0x00000008), helpstring("Fired after a window is activated.")]
+        HRESULT WindowActivate([in] IDispatch* theWindow);
+        [id(0x00000009), helpstring("Fired after a window is deactivated.")]
+        HRESULT WindowDeactivate([in] IDispatch* theWindow);
+        [id(0x0000000a), helpstring("Fired when a Workspace is opened.")]
+        HRESULT WorkspaceOpen();
+        [id(0x0000000b), helpstring("Fired when a Workspace is closed.")]
+        HRESULT WorkspaceClose();
+        [id(0x0000000c), helpstring("Fired when a new Workspace is created.")]
+        HRESULT NewWorkspace();
+    };
+
+    [
+      uuid(AE166B02-A9A0-11CF-AD07-00A0C9034965),
+      hidden
+    ]
+    dispinterface IDispApplicationEvents {
+        properties:
+        methods:
+            [id(0x60000000), restricted]
+            void QueryInterface(
+                            [in] GUID* riid, 
+                            [out] void** ppvObj);
+            [id(0x60000001), restricted]
+            unsigned long AddRef();
+            [id(0x60000002), restricted]
+            unsigned long Release();
+            [id(0x60010000), restricted]
+            void GetTypeInfoCount([out] unsigned int* pctinfo);
+            [id(0x60010001), restricted]
+            void GetTypeInfo(
+                            [in] unsigned int itinfo, 
+                            [in] unsigned long lcid, 
+                            [out] void** pptinfo);
+            [id(0x60010002), restricted]
+            void GetIDsOfNames(
+                            [in] GUID* riid, 
+                            [in] char** rgszNames, 
+                            [in] unsigned int cNames, 
+                            [in] unsigned long lcid, 
+                            [out] long* rgdispid);
+            [id(0x60010003), restricted]
+            void Invoke(
+                            [in] long dispidMember, 
+                            [in] GUID* riid, 
+                            [in] unsigned long lcid, 
+                            [in] unsigned short wFlags, 
+                            [in] DISPPARAMS* pdispparams, 
+                            [out] VARIANT* pvarResult, 
+                            [out] EXCEPINFO* pexcepinfo, 
+                            [out] unsigned int* puArgErr);
+            [id(0x00000001), helpstring("Fired before a build starts.")]
+            void BeforeBuildStart();
+            [id(0x00000002), helpstring("Fired when a build finished.")]
+            void BuildFinish(
+                            [in] long nNumErrors, 
+                            [in] long nNumWarnings);
+            [id(0x00000003), helpstring("Fired before the Developer Studio Applicaiton shuts down.")]
+            void BeforeApplicationShutDown();
+            [id(0x00000004), helpstring("Fired after a docuement is opened.")]
+            void DocumentOpen([in] IDispatch* theDocument);
+            [id(0x00000005), helpstring("Fired before a document is closed.")]
+            void BeforeDocumentClose([in] IDispatch* theDocument);
+            [id(0x00000006), helpstring("Fired after a document has been saved.")]
+            void DocumentSave([in] IDispatch* theDocument);
+            [id(0x00000007), helpstring("Fired after a new document has been created.")]
+            void NewDocument([in] IDispatch* theDocument);
+            [id(0x00000008), helpstring("Fired after a window is activated.")]
+            void WindowActivate([in] IDispatch* theWindow);
+            [id(0x00000009), helpstring("Fired after a window is deactivated.")]
+            void WindowDeactivate([in] IDispatch* theWindow);
+            [id(0x0000000a), helpstring("Fired when a Workspace is opened.")]
+            void WorkspaceOpen();
+            [id(0x0000000b), helpstring("Fired when a Workspace is closed.")]
+            void WorkspaceClose();
+            [id(0x0000000c), helpstring("Fired when a new Workspace is created.")]
+            void NewWorkspace();
+    };
+
+    [
+      uuid(FB7FDAE2-89B8-11CF-9BE8-00A0C90A632C),
+      helpstring("Application Object for Microsoft Developer Studio."),
+      appobject
+    ]
+    coclass Application {
+        dispinterface IDispApplication;
+        [default] interface IApplication;
+        [source] interface IApplicationEvents;
+        [default, source] dispinterface IDispApplicationEvents;
+    };
+
+    [
+      odl,
+      uuid(FB7FDAE3-89B8-11CF-9BE8-00A0C90A632C),
+      helpstring("Collection of open Documents."),
+      hidden,
+      dual,
+      oleautomation
+    ]
+    interface IDocuments : IDispatch {
+        [id(0x00000001), propget, helpstring("Returns the number of documents in the collection.")]
+        HRESULT Count([out, retval] long* Count);
+        [id(0x00000002), propget, helpstring("Returns the Developer Studio Application object")]
+        HRESULT Application([out, retval] IDispatch** ppApplication);
+        [id(0x00000003), propget, helpstring("Returns the Developer Studio Application object")]
+        HRESULT Parent([out, retval] IDispatch** ppParent);
+        [id(0xfffffffc), propget, restricted, hidden]
+        HRESULT _NewEnum([out, retval] IUnknown** _NewEnum);
+        [id(00000000), helpstring("Returns a Document object from the collection by its index or filename.")]
+        HRESULT Item(
+                        [in] VARIANT Index, 
+                        [out, retval] IDispatch** Item);
+        [id(0x00000005), helpstring("Saves all open documents.")]
+        HRESULT SaveAll(
+                        [in, optional] VARIANT vtBoolPrompt, 
+                        [out, retval] DsSaveStatus* pSaved);
+        [id(0x00000006), helpstring("Closes all documents")]
+        HRESULT CloseAll(
+                        [in, optional] VARIANT vtSaveChanges, 
+                        [out, retval] DsSaveStatus* pSaved);
+        [id(0x00000007), helpstring("Creates a new document.")]
+        HRESULT Add(
+                        [in] BSTR docType, 
+                        [in, optional] VARIANT vtReserved, 
+                        [out, retval] IDispatch** ppDocument);
+        [id(0x00000008), helpstring("Opens an existing document.")]
+        HRESULT Open(
+                        [in] BSTR filename, 
+                        [in, optional] VARIANT vtDocType, 
+                        [in, optional] VARIANT vtBoolReadOnly, 
+                        [out, retval] IDispatch** ppDocument);
+    };
+
+    [
+      uuid(E9EB1AE1-89A8-11CF-9BE8-00A0C90A632C),
+      hidden
+    ]
+    dispinterface IDispDocuments {
+        properties:
+            [id(0x00000001), readonly            ]
+            long Count;
+            [id(0x00000002), readonly            ]
+            IDispatch* Application;
+            [id(0x00000003), readonly            ]
+            IDispatch* Parent;
+            [id(0xfffffffc), readonly, hidden            ]
+            IUnknown* _NewEnum;
+        methods:
+            [id(0x00000005)]
+            long SaveAll([optional] VARIANT boolPrompt);
+            [id(0x00000006)]
+            long CloseAll([optional] VARIANT boolSaveChanges);
+            [id(0x00000007)]
+            IDispatch* Add(
+                            BSTR docType, 
+                            [optional] VARIANT vtReserved);
+            [id(0x00000008)]
+            IDispatch* Open(
+                            BSTR filename, 
+                            [optional] VARIANT docType, 
+                            [optional] VARIANT ReadOnly);
+            [id(00000000)]
+            IDispatch* Item(VARIANT Index);
+    };
+
+    [
+      uuid(E9EB1AE2-89A8-11CF-9BE8-00A0C90A632C)
+    ]
+    coclass Documents {
+        dispinterface IDispDocuments;
+        [default] interface IDocuments;
+    };
+
+    [
+      odl,
+      uuid(3928F551-96E6-11CF-9C00-00A0C90A632C),
+      helpstring("Collection of Window objects."),
+      hidden,
+      dual,
+      oleautomation
+    ]
+    interface IWindows : IDispatch {
+        [id(0x00000001), propget, helpstring("Returns number of Window objects in the collection.")]
+        HRESULT Count([out, retval] long* Count);
+        [id(0x00000002), propget, helpstring("Returns the Developer Studio Application object")]
+        HRESULT Application([out, retval] IDispatch** ppApplication);
+        [id(0x00000003), propget, helpstring("Returns the Developer Studio Application object")]
+        HRESULT Parent([out, retval] IDispatch** ppParent);
+        [id(0xfffffffc), propget, restricted, hidden]
+        HRESULT _NewEnum([out, retval] IUnknown** _NewEnum);
+        [id(00000000), helpstring("Returns a Window object from the collection by its index or its caption.")]
+        HRESULT Item(
+                        [in] VARIANT Index, 
+                        [out, retval] IDispatch** Item);
+        [id(0x00000005), helpstring("Arranges the windows in the collection.")]
+        HRESULT Arrange([in] VARIANT vtArrangeStyle);
+        [id(0x00000006), helpstring("Closes the windows in the collection.")]
+        HRESULT CloseAll(
+                        [in, optional] VARIANT vtSaveChanges, 
+                        [out, retval] DsSaveStatus* pSaved);
+    };
+
+    [
+      uuid(5774D191-96E1-11CF-9C00-00A0C90A632C),
+      hidden
+    ]
+    dispinterface IDispWindows {
+        properties:
+            [id(0x00000001), readonly            ]
+            long Count;
+            [id(0x00000002), readonly            ]
+            IDispatch* Application;
+            [id(0x00000003), readonly            ]
+            IDispatch* Parent;
+            [id(0xfffffffc), readonly, hidden            ]
+            IUnknown* _NewEnum;
+        methods:
+            [id(00000000)]
+            IDispatch* Item(VARIANT Index);
+            [id(0x00000005)]
+            long CloseAll([optional] VARIANT vtSaveChanges);
+    };
+
+    [
+      uuid(5774D192-96E1-11CF-9C00-00A0C90A632C)
+    ]
+    coclass Windows {
+        dispinterface IDispWindows;
+        [default] interface IWindows;
+    };
+
+    [
+      odl,
+      uuid(13BF7741-A7E8-11CF-AD07-00A0C9034965),
+      helpstring("Collection of Project objects."),
+      hidden,
+      dual,
+      oleautomation
+    ]
+    interface IProjects : IDispatch {
+        [id(0x00000001), propget, helpstring("Returns the Developer Studio Application object")]
+        HRESULT Application([out, retval] IDispatch** Application);
+        [id(0x00000002), propget, helpstring("Returns the number of Project objects in the collections.")]
+        HRESULT Count([out, retval] long* Count);
+        [id(0x00000004), propget, helpstring("Returns the Developer Studio Application object")]
+        HRESULT Parent([out, retval] IDispatch** Parent);
+        [id(0xfffffffc), propget, hidden]
+        HRESULT _NewEnum([out, retval] IUnknown** _NewEnum);
+        [id(00000000), helpstring("Returns a Project object from the collection by index or Name.")]
+        HRESULT Item(
+                        [in] VARIANT Index, 
+                        [out, retval] IGenericProject** Item);
+    };
+
+    [
+      uuid(DFAC7C40-A810-11CF-AD07-00A0C9034965),
+      hidden
+    ]
+    dispinterface IDispProjects {
+        properties:
+            [id(0x00000001), readonly            ]
+            IDispatch* Application;
+            [id(0x00000002), readonly            ]
+            long Count;
+            [id(0x00000004), readonly            ]
+            IDispatch* Parent;
+            [id(0xfffffffc), readonly, hidden            ]
+            IUnknown* _NewEnum;
+        methods:
+            [id(00000000)]
+            IDispatch* Item(VARIANT Index);
+    };
+
+    [
+      uuid(DFAC7C41-A810-11CF-AD07-00A0C9034965)
+    ]
+    coclass Projects {
+        [default] interface IProjects;
+        dispinterface IDispProjects;
+    };
+
+    [
+      uuid(E1870221-933A-11CF-9BF9-00A0C90A632C),
+      hidden
+    ]
+    dispinterface IDispGenericDocument {
+        properties:
+            [id(00000000), readonly            ]
+            BSTR Name;
+            [id(0x00000001), readonly            ]
+            BSTR FullName;
+            [id(0x00000002), readonly            ]
+            IDispatch* Application;
+            [id(0x00000003), readonly            ]
+            IDispatch* Parent;
+            [id(0x00000004), readonly            ]
+            BSTR Path;
+            [id(0x00000005)            ]
+            VARIANT_BOOL Saved;
+            [id(0x00000006)            ]
+            IDispatch* ActiveWindow;
+            [id(0x00000007)            ]
+            VARIANT_BOOL ReadOnly;
+            [id(0x00000008)            ]
+            BSTR Type;
+            [id(0x00000009)            ]
+            IDispatch* Windows;
+            [id(0x0000000a)            ]
+            VARIANT_BOOL Active;
+        methods:
+            [id(0x0000000b)]
+            IDispatch* NewWindow();
+            [id(0x0000000c)]
+            long Save(
+                            [optional] VARIANT filename, 
+                            [optional] VARIANT longSaveChanges);
+            [id(0x0000000d)]
+            VARIANT_BOOL Undo();
+            [id(0x0000000e)]
+            VARIANT_BOOL Redo();
+            [id(0x0000000f)]
+            VARIANT_BOOL PrintOut();
+            [id(0x00000010)]
+            long Close([optional] VARIANT longSaveChanges);
+    };
+
+    [
+      uuid(E1870222-933A-11CF-9BF9-00A0C90A632C)
+    ]
+    coclass Document {
+        dispinterface IDispGenericDocument;
+        [default] interface IGenericDocument;
+    };
+
+    [
+      uuid(E1870223-933A-11CF-9BF9-00A0C90A632C),
+      hidden
+    ]
+    dispinterface IDispGenericWindow {
+        properties:
+            [id(0x00000001), readonly            ]
+            BSTR Caption;
+            [id(0x00000002), readonly            ]
+            BSTR Type;
+            [id(0x00000003)            ]
+            VARIANT_BOOL Active;
+            [id(0x00000004)            ]
+            long Left;
+            [id(0x00000005)            ]
+            long Top;
+            [id(0x00000006)            ]
+            long Height;
+            [id(0x00000007)            ]
+            long Width;
+            [id(0x00000008), readonly            ]
+            long Index;
+            [id(0x00000009), readonly            ]
+            IDispatch* Next;
+            [id(0x0000000a), readonly            ]
+            IDispatch* Previous;
+            [id(00000000), readonly            ]
+            BSTR _Caption;
+            [id(0x0000000b)            ]
+            DsWindowState WindowState;
+        methods:
+            [id(0x00000010)]
+            long Close([optional] VARIANT boolSaveChanges);
+    };
+
+    [
+      uuid(E1870224-933A-11CF-9BF9-00A0C90A632C)
+    ]
+    coclass Window {
+        dispinterface IDispGenericWindow;
+        [default] interface IGenericWindow;
+    };
+
+    [
+      uuid(520BEC60-31E8-11D0-B17F-00A0C91BC8ED),
+      hidden
+    ]
+    dispinterface IDispGenericProject {
+        properties:
+            [id(00000000), readonly            ]
+            BSTR Name;
+            [id(0x00000001), readonly            ]
+            BSTR FullName;
+            [id(0x00000002), readonly            ]
+            IDispatch* Application;
+            [id(0x00000003), readonly            ]
+            IDispatch* Parent;
+            [id(0x00000004), readonly            ]
+            BSTR Type;
+        methods:
+    };
+
+    [
+      uuid(520BEC61-31E8-11D0-B17F-00A0C91BC8ED)
+    ]
+    coclass Project {
+        dispinterface IDispGenericProject;
+        [default] interface IGenericProject;
+    };
+
+    [
+      odl,
+      uuid(C0002F81-AE2E-11CF-AD07-00A0C9034965),
+      hidden,
+      oleautomation
+    ]
+    interface IDSAddIn : IUnknown {
+        HRESULT _stdcall OnConnection(
+                        [in] IApplication* pApp, 
+                        [in] VARIANT_BOOL bFirstTime, 
+                        [in] long dwCookie, 
+                        [out, retval] VARIANT_BOOL* OnConnection);
+        HRESULT _stdcall OnDisconnection([in] VARIANT_BOOL bLastTime);
+    };
+};

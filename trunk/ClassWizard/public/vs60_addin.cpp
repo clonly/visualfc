@@ -226,7 +226,7 @@ bool vs60_addin::replace_text(const char * file, int line, const char * old, con
 	return (bool)(hr == S_OK);
 }
 
-bool vs60_addin::add_project_file(const char * file)
+bool vs60_addin::add_project_file(const TCHAR * file)
 {
 	CComPtr<IDispatch> ActiveProject;
 	CComPtr<IDispatch> ActiveDocument;
@@ -245,7 +245,7 @@ bool vs60_addin::add_project_file(const char * file)
 	return false;
 }
 
-const char * vs60_addin::get_project_path()
+const TCHAR * vs60_addin::get_project_path()
 {
 	static CString s_path;
 	CComBSTR	ActiveFileName;		
@@ -262,13 +262,13 @@ const char * vs60_addin::get_project_path()
 		if (pos)
 		{
 			s_path = s_path.Left(pos);
-			return (char*)(const char*)s_path;
+			return (TCHAR *)(const TCHAR *)s_path;
 		}
 	}
-	return "";
+	return _T("");
 }
 
-const char * vs60_addin::get_project_name()
+const TCHAR * vs60_addin::get_project_name()
 {
 	static CString s_name;
 	CComBSTR	ActiveFileName;		
@@ -282,7 +282,7 @@ const char * vs60_addin::get_project_name()
 		s_name = name;
 		return s_name;
 	}
-	return "";
+	return _T("");
 }
 
 bool vs60_addin::ExecVFCWizard()

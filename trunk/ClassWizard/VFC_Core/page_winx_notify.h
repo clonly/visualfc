@@ -5,9 +5,9 @@ class page_winx_notify : public ui_page_dialog_t<page_winx_notify,IDD_PAGE_WINX_
 						 public page_base_t<page_winx_notify>
 {
 public:
-	const char * page_name()
+	const TCHAR * page_name()
 	{
-		return "Winx Notify";
+		return _T("Winx Notify");
 	}
 //	codeparser * pcode;
 	Token	   * m_tkcls;
@@ -140,13 +140,14 @@ public:
 
 	bool OnAddNotify(win32_notify_code * wnc, LPCTSTR id, bool bMenu)
 	{
+        USES_CONVERSION;
 		dlg_add_notify dlg;
 		dlg.m_notify = _T("Message: ")+wnc->code;
 		dlg.m_objectid = _T("Object ID: ")+(CString)id;
 		dlg.m_function = wnc->func+GetIDFunctionName(id);
 		if (dlg.DoModal() == IDOK)
 		{
-			Token * tk = pcode->WinxAddNotifyToken(wnc,m_tkcls,id,dlg.m_function,bMenu);
+			Token * tk = pcode->WinxAddNotifyToken(wnc,m_tkcls, T2CA(id),dlg.m_function,bMenu);
 			int item = AddWinxNotifyToken(tk);
 			m_tokenList.SetCurSel(item);
 		}

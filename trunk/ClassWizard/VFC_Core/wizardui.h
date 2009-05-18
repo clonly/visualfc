@@ -275,7 +275,7 @@ public:
 		return TRUE;
 	}
 public:
-	int AddProject(const char * project_name, const char * active_file)
+	int AddProject(const TCHAR * project_name, const TCHAR * active_file)
 	{
 		project_dsp dsp;
 		dsp.project_name = project_name;
@@ -418,6 +418,7 @@ public:
 
 	void OnProjectChange(project_dsp * dsp)
 	{
+        USES_CONVERSION; 
 		m_classCmb.ResetContent();
 		m_dialogCmb.ResetContent();
 		m_menuCmb.ResetContent();
@@ -768,9 +769,9 @@ public:
 		return true;
 	}
 public:
-	virtual const char * name()
+	virtual const TCHAR * name()
 	{
-		return "VisualFC";
+		return _T("VisualFC");
 	}
 
 	virtual void  set_vsaddin(fox::vs_addin * pvs)
@@ -778,7 +779,7 @@ public:
 		pVSAddin = pvs;
 	}
 
-	virtual void  load_project(const char * project_name, const char * active_file)
+	virtual void  load_project(const TCHAR * project_name, const TCHAR * active_file)
 	{
 		if (!bload && load_config())
 		{

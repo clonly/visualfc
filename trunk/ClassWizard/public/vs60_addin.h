@@ -23,11 +23,11 @@ public:
 public:
 	bool ExecVFCWizard();
 	virtual int				get_version() { return 0x60;}
-	virtual const char *	get_addin_name() { 
+	virtual const TCHAR *	get_addin_name() { 
 #ifdef EVC4
-		return "EVC4 Addin"; 
+		return _T("EVC4 Addin"); 
 #else
-		return "VS60 Addin";
+		return _T("VS60 Addin");
 #endif
 	}
 	virtual int				get_line_column(const char * file, int line);
@@ -38,13 +38,13 @@ public:
 	{
 		return m_dsp.source.GetSize();
 	}
-	virtual const char *	get_project_files(int i)
+	virtual const TCHAR *	get_project_files(int i)
 	{
 		return (LPCTSTR)m_dsp.source[i];
 	}
-	virtual const char *	get_project_path();
-	virtual const char *	get_project_name();
-	virtual bool			add_project_file(const char * file);
+	virtual const TCHAR *	get_project_path();
+	virtual const TCHAR *	get_project_name();
+	virtual bool			add_project_file(const TCHAR * file);
 	
 	LRESULT GetOpenFileDocument(CComPtr<IDispatch> & Document, const char * file);
 	LRESULT SaveAllDocuments();

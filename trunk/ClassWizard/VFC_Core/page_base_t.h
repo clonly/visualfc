@@ -9,9 +9,9 @@ public:
 	codeupdate  * pcodeup;
 	QLib::Event<void,Token*> EventGoToLine;
 public:
-	const char * page_name() 
+	const TCHAR * page_name() 
 	{ 
-		return "name unkown"; 
+		return _T("name unkown"); 
 	}
 //	QLib::Event<void,project_dsp*>		EventProjectChange;
 //	QLib::Event<void,Token*>		EventClassChange;

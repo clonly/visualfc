@@ -7,25 +7,29 @@ int __cdecl wxMessageBox(wxString const & str)
 	return 0;
 }
 */
+
+#if ((wxMAJOR_VERSION == 2) && (wxMINOR_VERSION < 9))
+
 #ifdef _DEBUG
 inline void wxOnAssert(char const *,int,char const *,char const *,char const *)
 {
 }
 #endif
 
-struct cbThreadPoolTask
-{
-	bool TestDestroy()
-	{
-		return false;
-	}
-};
-
 inline long __cdecl wxNewId(void)
 {
 	static long id = 2000;
 	return id++;
 }
+#endif  // (wxMAJOR_VERSION <= 2) && (wxMINOR_VERSION < 9)
+
+struct cbThreadPoolTask
+{
+    bool TestDestroy()
+    {
+        return false;
+    }
+};
 
 struct wxCommandEvent2
 {

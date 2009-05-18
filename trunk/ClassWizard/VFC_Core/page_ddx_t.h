@@ -184,7 +184,7 @@ public:
 	CDataListT<ResControl>  m_ctrlList;
 	CDataListT<Token>		m_tkList;
 public:
-	const char * page_name() 
+	const TCHAR * page_name() 
 	{ 
 		return _T("Page DDX Template"); 
 	}
@@ -203,7 +203,7 @@ public:
 			if (tkvar != NULL)
 			{
 				tk->m_Data = tkvar;
-				return m_tkList.AddStringData(name+_T(";")+args+_T(";")+(CString)tkvar->m_Type+_T(";")+(CString)tkvar->m_Name,tk);
+				return m_tkList.AddStringData(name+_T(";")+args+_T(";")+((CString)(LPCTSTR)tkvar->m_Type)+_T(";")+(CString)(LPCTSTR)tkvar->m_Name,tk);
 			}
 		}
 		return m_tkList.AddStringData(name+_T(";")+args,tk);

@@ -100,13 +100,13 @@ BOOL WINAPI DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID /*lpReserved*/)
 
 STDAPI DllGetClassObject(REFCLSID rclsid, REFIID riid, LPVOID* ppv)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	// AFX_MANAGE_STATE(AfxGetStaticModuleState());
 	return _Module.GetClassObject(rclsid, riid, ppv);
 }
 
 STDAPI DllCanUnloadNow(void)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	// AFX_MANAGE_STATE(AfxGetStaticModuleState());
 //	return (AfxDllCanUnloadNow()==S_OK && _Module.GetLockCount()==0) ? S_OK : S_FALSE;
     return (_Module.GetLockCount()==0) ? S_OK : S_FALSE;
 }
@@ -114,7 +114,7 @@ STDAPI DllCanUnloadNow(void)
 // by exporting DllRegisterServer, you can use regsvr32.exe
 STDAPI DllRegisterServer(void)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	// AFX_MANAGE_STATE(AfxGetStaticModuleState());
 	HRESULT hRes = S_OK;
 	
 	// Registers object, typelib and all interfaces in typelib
@@ -162,7 +162,7 @@ STDAPI DllRegisterServer(void)
 
 STDAPI DllUnregisterServer(void)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	// AFX_MANAGE_STATE(AfxGetStaticModuleState());
 
 	HRESULT hRes = S_OK;
 	_Module.UnregisterServer();

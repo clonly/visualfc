@@ -121,7 +121,7 @@ public:
 	CDataListT<ResBase>  m_resList;
 	CDataListT<Token>		m_tkList;
 public:
-	const char * page_name() 
+	const TCHAR * page_name() 
 	{ 
 		return _T("Page DDX Template"); 
 	}

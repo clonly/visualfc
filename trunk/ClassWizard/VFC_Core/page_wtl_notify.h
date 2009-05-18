@@ -33,7 +33,7 @@ struct page_wtl_notify_peer : page_notify_peer
 			tk->m_Name == _T("COMMAND_HANDLER") )
 		{
 			ret = _T("LRESULT ");
-			func = tk->m_String;
+			func = (LPCTSTR)tk->m_String;
 			param = _T("(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandled)");
 			body = _T("return 0;");
 		}
@@ -41,7 +41,7 @@ struct page_wtl_notify_peer : page_notify_peer
 			tk->m_Name == _T("NOTIFY_ID_HANDLER"))
 		{
 			ret = _T("LRESULT ");
-			func = tk->m_String;
+			func = (LPCTSTR)tk->m_String;
 			param = _T("(int idCtrl, LPNMHDR pnmh, BOOL& bHandled)");
 			body = _T("return 0;");
 		}
@@ -54,7 +54,7 @@ struct page_wtl_notify_peer : page_notify_peer
 		}
 		else
 		{
-			CString	cls = tkcls->m_Name+_T("::");
+			CString	cls = (LPCTSTR) (tkcls->m_Name+_T("::"));
 			pt->AddLine(ret+func+param+_T(";"));
 			ptimpl->AddLine(ret+cls+func+param);
 			ptimpl->AddLine(_T("{"));
@@ -97,9 +97,9 @@ struct page_wtl_notify_peer : page_notify_peer
 class page_wtl_notify : public page_notify_template
 {
 public:
-	const char * page_name()
+	const TCHAR * page_name()
 	{
-		return "WTL Notify";
+		return _T("WTL Notify");
 	}
 public:
 	page_wtl_notify()

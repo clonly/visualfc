@@ -63,7 +63,7 @@ public:
 			CListBox::GetText(lpDIS->itemID,sz);
 			COLORREF oldColor;
 			//draw two rectangles, one for each row column
-			if (lpDIS->itemState & ODS_SELECTED  == ODS_SELECTED )
+			if ((lpDIS->itemState & ODS_SELECTED)  == ODS_SELECTED )
 			{
 				dc.FillSolidRect(&lpDIS->rcItem,RGB(0,0,128));
 				oldColor = dc.SetTextColor(RGB(255,255,255));

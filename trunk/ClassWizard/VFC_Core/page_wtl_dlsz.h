@@ -80,7 +80,7 @@ public:
 		m_peer = new page_wtl_dlsz_peer();
 		m_peer->init_tag(m_tag);
 	}
-	const char * page_name() 
+	const TCHAR * page_name() 
 	{ 
 		return _T("WTL Resize"); 
 	}

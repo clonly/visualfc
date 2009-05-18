@@ -127,7 +127,7 @@ public:
 			HTREEITEM item = m_rootTree.InsertItem(*it,TVI_ROOT,NULL);
 		}
 
-		DoTreeChanged("All",true);
+		DoTreeChanged(_T("All"), true);
 		return TRUE;
 	}
 	BOOL RunWizard()
@@ -147,11 +147,11 @@ public:
 		CString path = cfg.rootPath+_T("\\")+cfg.runtime;
 		if (lib.load(path))
 		{
-			int (*run_wizard)(const char *) = NULL;
+			int (*run_wizard)(const TCHAR *) = NULL;
 			int (*run_wizard_ex)(fox::codewiz_args*) = NULL;
-			if (lib.GetFunc(run_wizard_ex,"run_wizard_ex"))
+			if (lib.GetFunc(run_wizard_ex, _T("run_wizard_ex")))
 			{
-				std::vector<const char*> ptr;
+				std::vector<const TCHAR*> ptr;
 				for (size_t i = 0; i < ar_idd.size(); i++)
 				{
 					ptr.push_back(ar_idd[i]);
@@ -186,11 +186,11 @@ public:
 						text += _T("\t\r\n");
 						next = next->next;
 					}
-					MessageBox(text,"Code Wizard", MB_ICONASTERISK);
+					MessageBox(text, _T("Code Wizard"), MB_ICONASTERISK);
 					return TRUE;
 				}
 			}
-			else if (lib.GetFunc(run_wizard,"run_wizard"))
+			else if (lib.GetFunc(run_wizard, _T("run_wizard")))
 			{
 				int ret = (*run_wizard)(cfg.rootPath+_T("\\")+cfg.templates);
 				if (ret == 0)
@@ -214,12 +214,12 @@ public:
 		}
 		else
 		{
-			m_projEdit.SetWindowText("");
+			m_projEdit.SetWindowText(_T(""));
 		}
 		return TRUE;
 	}
 	
-	BOOL DoTreeChanged(LPCTSTR lpszRoot = "", bool bAll = false)
+	BOOL DoTreeChanged(LPCTSTR lpszRoot = _T(""), bool bAll = false)
 	{
 		CString root = lpszRoot;
 		if (root.IsEmpty())

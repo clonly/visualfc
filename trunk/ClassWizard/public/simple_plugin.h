@@ -35,11 +35,12 @@ namespace simple_plugin
 			return hLib != NULL;
 		}
 		template <typename FUNC>
-		bool GetFunc(FUNC & pfn, LPCSTR lpProcName)
+		bool GetFunc(FUNC & pfn, LPCTSTR lpProcName)
 		{
+			USES_CONVERSION;
 			if (hLib == NULL)
 				return false;
-			pfn = (FUNC)::GetProcAddress(hLib,lpProcName);
+			pfn = (FUNC)::GetProcAddress(hLib, T2CA(lpProcName));
 			return pfn != NULL;
 		}
 	};

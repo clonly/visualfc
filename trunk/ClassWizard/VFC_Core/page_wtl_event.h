@@ -95,7 +95,7 @@ public:
 struct page_wtl_event_peer : page_event_peer
 {
 	int					m_nMsgType;
-	virtual init_tag(tag_token & tag)
+	virtual void init_tag(tag_token & tag)
 	{
 		m_nMsgType = 0;
 		tag.kind = tkMapping;
@@ -139,7 +139,7 @@ struct page_wtl_event_peer : page_event_peer
 		}
 		else
 		{
-			CString	cls = tkcls->m_Name+_T("::");
+			CString	cls = (LPCTSTR)(tkcls->m_Name+_T("::"));
 			pt->AddLine(ret+func+param+_T(";"));
 			ptimpl->AddLine();
 			ptimpl->AddLine(ret+cls+func+param);
@@ -286,9 +286,9 @@ public:
 		m_peer = new page_wtl_event_peer();
 		m_peer->init_tag(m_tag);
 	}
-	const char * page_name()
+	const TCHAR * page_name()
 	{
-		return "WTL Event";
+		return _T("WTL Event");
 	}
 };
 

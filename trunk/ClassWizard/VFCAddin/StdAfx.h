@@ -27,7 +27,7 @@ extern CComModule _Module;
 #include <atlmisc.h>
 #include <ShlGuid.h>
 
-#define AFX_MANAGE_STATE(x)	(0)
+// #define AFX_MANAGE_STATE(x)	(0)
 #define ASSERT(x) ATLASSERT(x)
 #define VERIFY(x) x
 

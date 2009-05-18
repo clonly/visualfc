@@ -19,14 +19,14 @@ namespace fox
 			idd_num = 0;
 			idd_array = NULL;
 		}
-		char codewiz_name[MAX_PATH];
-		char codewiz_info[MAX_PATH];
-		char project_name[MAX_PATH];
-		char project_path[MAX_PATH];
-		char template_path[MAX_PATH];
-		char idd[MAX_PATH];
+		TCHAR codewiz_name[MAX_PATH];
+		TCHAR codewiz_info[MAX_PATH];
+		TCHAR project_name[MAX_PATH];
+		TCHAR project_path[MAX_PATH];
+		TCHAR template_path[MAX_PATH];
+		TCHAR idd[MAX_PATH];
 		int			 idd_num;
-		const char ** idd_array;
+		const TCHAR ** idd_array;
 		fox::code_file return_files;
 	};
 

@@ -17,7 +17,7 @@ static char THIS_FILE[] = __FILE__;
 STDMETHODIMP CDSAddIn::OnConnection(IApplication* pApp, VARIANT_BOOL bFirstTime,
 		long dwCookie, VARIANT_BOOL* OnConnection)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	// AFX_MANAGE_STATE(AfxGetStaticModuleState());
 	
 	// Store info passed to us
 	IApplication* pApplication = NULL;
@@ -87,7 +87,7 @@ STDMETHODIMP CDSAddIn::OnConnection(IApplication* pApp, VARIANT_BOOL bFirstTime,
 // This is called on shut-down, and also when the user unloads the add-in
 STDMETHODIMP CDSAddIn::OnDisconnection(VARIANT_BOOL bLastTime)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	// AFX_MANAGE_STATE(AfxGetStaticModuleState());
 
 	m_pCommands->UnadviseFromEvents();
 	m_pCommands->Release();
