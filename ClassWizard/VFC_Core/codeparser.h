@@ -351,7 +351,7 @@ public:
 		for (size_t i = 0; i < tkcls->m_Children.GetCount(); i++) {
 			Token * tk = tkcls->m_Children[i];
 			if (tk->m_TokenKind == tkVariable &&
-				(CString)tk->m_Name == (CString)var) 
+				(CString)(LPCTSTR)tk->m_Name == (CString)var) 
 			{
 				return tk;
 			}
@@ -605,7 +605,7 @@ public:
 		for (size_t i = 0; i < tkcls->m_Children.GetCount(); i++) {
 			Token * tk = tkcls->m_Children[i];
 			if (tk->m_TokenKind == tkFunction &&
-				(CString)tk->m_Name == ev->name) {
+				(CString)(LPCTSTR)tk->m_Name == ev->name) {
 				if (tk->m_TokenUpdate == tuRemove) {
 					tk->m_TokenUpdate = tuNormal;
 				}
@@ -664,7 +664,7 @@ public:
 		for (int i = 0; i < m_winxev.m_items.GetSize(); i++)
 		{
 			winx_event & ev = m_winxev.m_items[i];
-			if (ev.name == CString(tk->m_Name))
+			if (ev.name == CString((LPCTSTR)tk->m_Name))
 			{
 				return true;
 			}
@@ -700,7 +700,7 @@ public:
 	}
 	CString WinxGetNotifyTokenFuncitonName(Token * tk)
 	{
-		CString tmp = tk->m_Args;
+		CString tmp = (LPCTSTR) tk->m_Args;
 		tmp.TrimLeft(_T("("));
 		tmp.TrimRight(_T(")"));
 		CAtlArray<CString> array;

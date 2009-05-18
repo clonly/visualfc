@@ -7,9 +7,9 @@ class page_winx_event : public ui_page_dialog_t<page_winx_event, IDD_PAGE_WINX_E
 						public page_base_t<page_winx_event>
 {
 public:
-	const char * page_name()
+	const TCHAR * page_name()
 	{
-		return "Winx Event";
+		return _T("Winx Event");
 	}
 	enum { IDD = IDD_PAGE_WINX_EVENT };
 public:
@@ -239,7 +239,7 @@ protected:
 		for (size_t i = 0; i < m_tree_items.GetCount(); i++)
 		{
 			winx_event * ev = (winx_event*)m_eventTree.GetItemData(m_tree_items[i]);
-			if (ev != NULL && (ev->name == (CString)tk->m_Name))
+			if (ev != NULL && (ev->name == (CString)(LPCTSTR)tk->m_Name))
 			{
 				return m_tree_items[i];
 			}
@@ -253,7 +253,7 @@ protected:
 		}
 		for (int i = 0; i < m_tokenList.GetCount(); i++) {
 			Token * tk = (Token*)m_tokenList.GetItemData(i);
-			if (tk && ((CString)tk->m_Name == ev->name)) {
+			if (tk && ((CString)(LPCTSTR)tk->m_Name == ev->name)) {
 				return tk;
 			}
 		}
@@ -267,7 +267,7 @@ protected:
 		}
 		for (int i = 0; i < m_tokenList.GetCount(); i++) {
 			Token * tk = (Token*)m_tokenList.GetItemData(i);
-			if (tk && ((CString)tk->m_Name == ev->name)) {
+			if (tk && ((CString)(LPCTSTR)tk->m_Name == ev->name)) {
 				return i;
 			}
 		}
@@ -280,7 +280,7 @@ protected:
 		}
 		for (int i = 0; i < m_eventList.GetCount(); i++) {
 			winx_event * ev = (winx_event*)m_eventList.GetItemData(i);
-			if (ev != NULL && (ev->name == (CString)tk->m_Name) ) {
+			if (ev != NULL && (ev->name == (CString)(LPCTSTR)tk->m_Name) ) {
 				return i;
 			}
 		}

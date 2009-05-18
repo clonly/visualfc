@@ -12,9 +12,9 @@ public:
 		DLGRESIZE_CONTROL(IDC_INFO_RESOURCE, DLSZ_SIZE_X)
 	END_DLGRESIZE_MAP()
 
-	const char * page_name()
+	const TCHAR * page_name()
 	{
-		return "Class Info";
+		return _T("Class Info");
 	}
 
 	void OnInit()

@@ -144,7 +144,7 @@ public:
 		m_peer = new page_winx_ddx_peer();
 		m_peer->init_tag(m_tag);
 	}
-	const char * page_name() 
+	const TCHAR * page_name() 
 	{ 
 		return _T("Winx DDX"); 
 	}

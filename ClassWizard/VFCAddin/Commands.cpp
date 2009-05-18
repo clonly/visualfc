@@ -90,73 +90,73 @@ void CCommands::UnadviseFromEvents()
 
 HRESULT CCommands::XApplicationEvents::BeforeBuildStart()
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	// AFX_MANAGE_STATE(AfxGetStaticModuleState());
 	return S_OK;
 }
 
 HRESULT CCommands::XApplicationEvents::BuildFinish(long nNumErrors, long nNumWarnings)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	// AFX_MANAGE_STATE(AfxGetStaticModuleState());
 	return S_OK;
 }
 
 HRESULT CCommands::XApplicationEvents::BeforeApplicationShutDown()
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	// AFX_MANAGE_STATE(AfxGetStaticModuleState());
 	return S_OK;
 }
 
 HRESULT CCommands::XApplicationEvents::DocumentOpen(IDispatch* theDocument)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	// AFX_MANAGE_STATE(AfxGetStaticModuleState());
 	return S_OK;
 }
 
 HRESULT CCommands::XApplicationEvents::BeforeDocumentClose(IDispatch* theDocument)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	// AFX_MANAGE_STATE(AfxGetStaticModuleState());
 	return S_OK;
 }
 
 HRESULT CCommands::XApplicationEvents::DocumentSave(IDispatch* theDocument)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	// AFX_MANAGE_STATE(AfxGetStaticModuleState());
 	return S_OK;
 }
 
 HRESULT CCommands::XApplicationEvents::NewDocument(IDispatch* theDocument)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	// AFX_MANAGE_STATE(AfxGetStaticModuleState());
 	return S_OK;
 }
 
 HRESULT CCommands::XApplicationEvents::WindowActivate(IDispatch* theWindow)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	// AFX_MANAGE_STATE(AfxGetStaticModuleState());
 	return S_OK;
 }
 
 HRESULT CCommands::XApplicationEvents::WindowDeactivate(IDispatch* theWindow)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	// AFX_MANAGE_STATE(AfxGetStaticModuleState());
 	return S_OK;
 }
 
 HRESULT CCommands::XApplicationEvents::WorkspaceOpen()
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	// AFX_MANAGE_STATE(AfxGetStaticModuleState());
 	return S_OK;
 }
 
 HRESULT CCommands::XApplicationEvents::WorkspaceClose()
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	// AFX_MANAGE_STATE(AfxGetStaticModuleState());
 	return S_OK;
 }
 
 HRESULT CCommands::XApplicationEvents::NewWorkspace()
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	// AFX_MANAGE_STATE(AfxGetStaticModuleState());
 	return S_OK;
 }
 
@@ -164,7 +164,7 @@ HRESULT CCommands::XApplicationEvents::NewWorkspace()
 
 HRESULT CCommands::XDebuggerEvents::BreakpointHit(IDispatch* pBreakpoint)
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	// AFX_MANAGE_STATE(AfxGetStaticModuleState());
 	return S_OK;
 }
 
@@ -174,7 +174,7 @@ HRESULT CCommands::XDebuggerEvents::BreakpointHit(IDispatch* pBreakpoint)
 
 STDMETHODIMP CCommands::VFCAddinCommandMethod() 
 {
-	AFX_MANAGE_STATE(AfxGetStaticModuleState());
+	// AFX_MANAGE_STATE(AfxGetStaticModuleState());
 
 	// TODO: Replace this with the actual code to execute this command
 	//  Use m_pApplication to access the Developer Studio Application object,

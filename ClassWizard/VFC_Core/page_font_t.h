@@ -4,7 +4,7 @@
 struct page_font_peer
 {
 	virtual ~page_font_peer() {}
-	virtual init_tag(tag_token & tag) = 0;
+	virtual void init_tag(tag_token & tag) = 0;
 	virtual Token * add_font_dlg(codeparser * pcode, Token * tkcls, ResControl * ctrl, bool bdlg) = 0;
 
 	virtual LPCTSTR get_token_id(Token * tk)

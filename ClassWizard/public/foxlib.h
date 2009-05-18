@@ -11,25 +11,25 @@ namespace fox
 	{
 	public:
 		virtual int				get_version() = 0;
-		virtual const char *	get_addin_name() = 0;
+		virtual const TCHAR *	get_addin_name() = 0;
 		virtual int				get_line_column(const char * file, int line) = 0;
 		virtual bool			insert_block(const char * file, int line, int column, const char * text) = 0;
 		virtual bool			replace_text(const char * file, int line, const char * old, const char * text) = 0;
 		virtual bool			goto_line(const char * file, int line) = 0;
 		virtual int				get_project_file_count() = 0;
-		virtual const char *	get_project_files(int i) = 0;
-		virtual const char *	get_project_path() = 0;
-		virtual const char *	get_project_name() = 0;
-		virtual bool			add_project_file(const char * file) = 0;
+		virtual const TCHAR *	get_project_files(int i) = 0;
+		virtual const TCHAR *	get_project_path() = 0;
+		virtual const TCHAR *	get_project_name() = 0;
+		virtual bool			add_project_file(const TCHAR * file) = 0;
 	};
 
 	class vfc_item
 	{
 	public:
 		virtual ~vfc_item() {}
-		virtual const char * name() = 0;
+		virtual const TCHAR * name() = 0;
 		virtual void  set_vsaddin(vs_addin *) = 0;
-		virtual void  load_project(const char * project_name, const char * active_file) = 0;
+		virtual void  load_project(const TCHAR * project_name, const TCHAR * active_file) = 0;
 	};	
 
 	namespace ui

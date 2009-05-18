@@ -126,8 +126,8 @@ void ArrayToStringEx(ArrayT & array, CString & text, LPCTSTR separator = _T(""),
 
 void HelperGetTokenTag(const Token * tk, CString & name, CString & args)
 {
-	name = tk->m_Name;
-	args = tk->m_Args;
+	name = (LPCTSTR) tk->m_Name;
+	args = (LPCTSTR) tk->m_Args;
 
 	args.TrimLeft();
 	args.TrimRight();
@@ -214,7 +214,7 @@ public:
 			insert_point * pt = new insert_point();
 			pt->line = line;
 			pt->AddLine(tk->m_Type+_T("\t")+tk->m_Name+_T(";"));
-			ptmap[(CString)tkcls->m_Filename].Add(pt);
+			ptmap[(CString)(LPCTSTR)tkcls->m_Filename].Add(pt);
 		}
 	}
 	void ProcessUpdateTokenFunction(Token * tkcls, Token * tk, INSERTPT_MAP & ptmap)
@@ -261,7 +261,7 @@ public:
 			if (!ev->body.IsEmpty())
 				pt->AddLine(ev->body,1);
 			pt->AddLine(_T("}"));
-			ptmap[(CString)tkcls->m_Filename].Add(pt);
+			ptmap[(CString)(LPCTSTR)tkcls->m_Filename].Add(pt);
 		}
 	}
 	void ProcessUpdateNotifyTokenFunction(Token * tkcls, const CString & func, const CString & body,INSERTPT_MAP & ptmap)
@@ -294,7 +294,7 @@ public:
 		if (!body.IsEmpty())
 			pt->AddLine(body,1);
 		pt->AddLine(_T("}"));
-		ptmap[(CString)tkcls->m_Filename].Add(pt);
+		ptmap[(CString)(LPCTSTR)tkcls->m_Filename].Add(pt);
 	}
 
 	int GetFirstInsertLine(Token * tkcls)
@@ -372,7 +372,7 @@ public:
 			pt->AddLine(_T(""));
 		}
 
-		ptmap[(CString)tkcls->m_Filename].Add(pt);	
+		ptmap[(CString)(LPCTSTR)tkcls->m_Filename].Add(pt);	
 
 		for (i = 0; i < cmd.GetSize(); i++)
 		{
@@ -406,7 +406,7 @@ public:
 			pt->AddLine(_T(""));
 		}
 
-		ptmap[(CString)tkcls->m_Filename].Add(pt);	
+		ptmap[(CString)(LPCTSTR)tkcls->m_Filename].Add(pt);	
 
 		for (i = 0; i < cmd.GetSize(); i++)
 		{
@@ -438,7 +438,7 @@ public:
 		if (head == NULL)
 			pt->AddLine(_T("WINX_DLGRESIZE_END();\r\n"));
 
-		ptmap[(CString)tkcls->m_Filename].Add(pt);
+		ptmap[(CString)(LPCTSTR)tkcls->m_Filename].Add(pt);
 	}
 	void ProcessUpdateTokenFont(Token * tkcls, CSimpleArray<Token*> & tks, INSERTPT_MAP & ptmap)
 	{
@@ -463,7 +463,7 @@ public:
 		if (head == NULL)
 			pt->AddLine(_T("WINX_DLGFONT_END();\r\n"));
 
-		ptmap[(CString)tkcls->m_Filename].Add(pt);
+		ptmap[(CString)(LPCTSTR)tkcls->m_Filename].Add(pt);
 	}
 	// process class tag
 	void GetUpdateClassTag(Token * tkcls, tag_token & tag, CSimpleArray<Token*> & tks)
@@ -530,7 +530,7 @@ public:
 			pt->AddLine(_T(""));
 		}
 
-		ptmap[(CString)tkcls->m_Filename].Add(pt);
+		ptmap[(CString)(LPCTSTR)tkcls->m_Filename].Add(pt);
 	}
 	bool ProcessUpdateTokenTagFunction(Token * tkcls, INSERTPT_MAP & ptmap, tag_token & tag, CSimpleArray<Token*> & tks)
 	{
@@ -578,7 +578,7 @@ public:
 				tag.get_function(tkcls,tk,pt,NULL);
 			}
 			
-			ptmap[(CString)tkcls->m_Filename].Add(pt);
+			ptmap[(CString)(LPCTSTR)tkcls->m_Filename].Add(pt);
 			return true;
 		}
 		return false;
@@ -606,7 +606,7 @@ public:
 			tag.get_tkdata(tk,pt);
 		}
 
-		ptmap[(CString)tkcls->m_Filename].Add(pt);
+		ptmap[(CString)(LPCTSTR)tkcls->m_Filename].Add(pt);
 	}
 
 	void ProcessUpdateClass(Token * tkcls, INSERTPT_MAP & ptmap)
@@ -696,9 +696,11 @@ public:
 	}
 	void ProcessInsertPoint(INSERTPT_MAP & ptmap)
 	{
+        USES_CONVERSION;
 		for (INSERTPT_MAP::iterator it = ptmap.begin(); it != ptmap.end(); it++)
 		{
 			const CString & filename = it->first;
+            const char * pFileName = T2CA((LPCTSTR)filename);
 			CSimpleArray<insert_point*> & ar = it->second;
 			typedef std::multimap<int,insert_point*,std::greater<int> > MM_MAP;
 			MM_MAP mm;
@@ -714,9 +716,9 @@ public:
 				if (pVSAddin)
 				{
 					if (pt->bcpp == false)
-						pVSAddin->insert_block(filename,pt->line,0,pt->GetText(1));
+						pVSAddin->insert_block(pFileName,pt->line,0, T2CA((LPCTSTR)pt->GetText(1)));
 					else
-						pVSAddin->insert_block(filename,pt->line,0,pt->GetText(0));
+						pVSAddin->insert_block(pFileName,pt->line,0, T2CA((LPCTSTR)pt->GetText(0)));
 				}	
 			}
 		}

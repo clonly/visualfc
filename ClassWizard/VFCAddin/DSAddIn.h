@@ -26,12 +26,12 @@ class CDSAddIn :
 {
 public:
 #ifdef EVC4
-		DECLARE_REGISTRY(CDSAddIn, "VFCAddinEVC.DSAddIn.1",
-		"VFCADDIN Developer Studio Add-in", IDS_VFCADDIN_LONGNAME_EVC,
+		DECLARE_REGISTRY(CDSAddIn, _T("VFCAddinEVC.DSAddIn.1"),
+		_T("VFCADDIN Developer Studio Add-in"), IDS_VFCADDIN_LONGNAME_EVC,
 		THREADFLAGS_BOTH)
 #else
-	DECLARE_REGISTRY(CDSAddIn, "VFCAddin.DSAddIn.1",
-		"VFCADDIN Developer Studio Add-in", IDS_VFCADDIN_LONGNAME,
+	DECLARE_REGISTRY(CDSAddIn, _T("VFCAddin.DSAddIn.1"),
+		_T("VFCADDIN Developer Studio Add-in"), IDS_VFCADDIN_LONGNAME,
 		THREADFLAGS_BOTH)
 #endif
 

@@ -12,9 +12,8 @@
 library VFCAddin
 {
 	importlib("stdole32.tlb");
-	importlib("devshl.dll");
-	importlib("ide\devdbg.pkg");
-	
+    import "vs6addinsdk\devshl.idl"; // importlib("devshl.dll"); 
+    import "vs6addinsdk\devdbg.idl"; // importlib("ide\devdbg.pkg"); 
 
 	//  Dual interface for CCommands
 	//

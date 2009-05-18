@@ -3,7 +3,7 @@
 
 struct page_winx_font_peer : page_font_peer
 {
-	virtual init_tag(tag_token & tag)
+	virtual void init_tag(tag_token & tag)
 	{
 		tag.kind = tkMapping;
 		tag.bext = false;
@@ -61,7 +61,7 @@ public:
 		m_peer = new page_winx_font_peer();
 		m_peer->init_tag(m_tag);
 	}
-	const char * page_name()
+	const TCHAR * page_name()
 	{
 		return _T("Winx Font");
 	}

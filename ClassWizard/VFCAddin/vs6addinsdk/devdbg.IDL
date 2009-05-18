@@ -1,0 +1,364 @@
+// Generated .IDL file (by the OLE/COM Object Viewer)
+// 
+// typelib filename: devdbg.pkg
+
+[
+  uuid(34C63000-AE64-11CF-AB59-00AA00C091A1),
+  version(6.0),
+  helpstring("Visual C++ Debugger")
+]
+library DSDebugger
+{
+    // TLib :     // TLib : OLE Automation : {00020430-0000-0000-C000-000000000046}
+    importlib("stdole2.tlb");
+
+    // Forward declare all types defined in this typelib
+    interface IDebuggerEvents;
+    dispinterface IDispDebuggerEvents;
+    interface IDebugger;
+    dispinterface IDispDebugger;
+    interface IBreakpoint;
+    dispinterface IDispBreakpoint;
+    interface IBreakpoints;
+    dispinterface IDispBreakpoints;
+
+    typedef [helpstring("Represents the debuggee's execution state.")]
+    enum {
+        dsNoDebugee = 0,
+        dsBreak = 1,
+        dsRunning = 2
+    } DsExecutionState;
+
+    typedef [helpstring("Represents the possible types of a Breakpoint object.")]
+    enum {
+        dsLocation = 0,
+        dsLocationWithTrueExpression = 1,
+        dsLocationWithChangedExpression = 2,
+        dsTrueExpression = 3,
+        dsChangedExpression = 4,
+        dsMessage = 5
+    } DsBreakpointType;
+
+    [
+      odl,
+      uuid(34C6301A-AE64-11CF-AB59-00AA00C091A1),
+      helpstring("Events fired by the Debugger object."),
+      hidden,
+      dual,
+      oleautomation
+    ]
+    interface IDebuggerEvents : IDispatch {
+        [id(0x00000001), helpstring("Fired when a breakpoint is hit.")]
+        HRESULT BreakpointHit([in] IDispatch* pBreakpoint);
+    };
+
+    [
+      uuid(34C6301B-AE64-11CF-AB59-00AA00C091A1),
+      hidden
+    ]
+    dispinterface IDispDebuggerEvents {
+        properties:
+        methods:
+            [id(0x60000000), restricted]
+            void QueryInterface(
+                            [in] GUID* riid, 
+                            [out] void** ppvObj);
+            [id(0x60000001), restricted]
+            unsigned long AddRef();
+            [id(0x60000002), restricted]
+            unsigned long Release();
+            [id(0x60010000), restricted]
+            void GetTypeInfoCount([out] unsigned int* pctinfo);
+            [id(0x60010001), restricted]
+            void GetTypeInfo(
+                            [in] unsigned int itinfo, 
+                            [in] unsigned long lcid, 
+                            [out] void** pptinfo);
+            [id(0x60010002), restricted]
+            void GetIDsOfNames(
+                            [in] GUID* riid, 
+                            [in] char** rgszNames, 
+                            [in] unsigned int cNames, 
+                            [in] unsigned long lcid, 
+                            [out] long* rgdispid);
+            [id(0x60010003), restricted]
+            void Invoke(
+                            [in] long dispidMember, 
+                            [in] GUID* riid, 
+                            [in] unsigned long lcid, 
+                            [in] unsigned short wFlags, 
+                            [in] DISPPARAMS* pdispparams, 
+                            [out] VARIANT* pvarResult, 
+                            [out] EXCEPINFO* pexcepinfo, 
+                            [out] unsigned int* puArgErr);
+            [id(0x00000001), helpstring("Fired when a breakpoint is hit.")]
+            void BreakpointHit([in] IDispatch* pBreakpoint);
+    };
+
+    [
+      odl,
+      uuid(34C63001-AE64-11CF-AB59-00AA00C091A1),
+      helpstring("Debugger object."),
+      hidden,
+      dual,
+      oleautomation
+    ]
+    interface IDebugger : IDispatch {
+        [id(0x00000001), propget, helpstring("Returns the Application Object.")]
+        HRESULT Application([out, retval] IDispatch** ppDispatch);
+        [id(0x00000002), propget, helpstring("Returns the Parent Object (Application).")]
+        HRESULT Parent([out, retval] IDispatch** ppDispatch);
+        [id(0x00000003), propget, helpstring("Returns the Breakpoints object.")]
+        HRESULT Breakpoints([out, retval] IDispatch** ppDispatch);
+        [id(0x00000004), propget, helpstring("Returns/sets the default radix used by the debugger.")]
+        HRESULT DefaultRadix([out, retval] long* pLong);
+        [id(0x00000004), propput, helpstring("Returns/sets the default radix used by the debugger.")]
+        HRESULT DefaultRadix([in] long pLong);
+        [id(0x00000005), propget, helpstring("Returns the current state of the process being debugged.")]
+        HRESULT ProcessState([out, retval] DsExecutionState* pState);
+        [id(0x00000006), propget, helpstring("Returns/sets whether Just In Time Debugging is enabled.")]
+        HRESULT JustInTimeDebugging([out, retval] VARIANT_BOOL* pBoolean);
+        [id(0x00000006), propput, helpstring("Returns/sets whether Just In Time Debugging is enabled.")]
+        HRESULT JustInTimeDebugging([in] VARIANT_BOOL pBoolean);
+        [id(0x00000007), propget, helpstring("Returns/sets whether Remote Procedure Call Debugging is enabled.")]
+        HRESULT RemoteProcedureCallDebugging([out, retval] VARIANT_BOOL* pBoolean);
+        [id(0x00000007), propput, helpstring("Returns/sets whether Remote Procedure Call Debugging is enabled.")]
+        HRESULT RemoteProcedureCallDebugging([in] VARIANT_BOOL pBoolean);
+        [id(0x00000009), helpstring("Causes the process being debugged to execute.")]
+        HRESULT Go();
+        [id(0x0000000a), helpstring("Executes the current line of source code, stepping Into any procedure calls encountered.")]
+        HRESULT StepInto();
+        [id(0x0000000b), helpstring("Executes the current line of source code, stepping over any procedure calls encountered.")]
+        HRESULT StepOver();
+        [id(0x0000000c), helpstring("Executes until control is returned from current procedure.")]
+        HRESULT StepOut();
+        [id(0x0000000d), helpstring("Terminates the current process being debugged, if any, and starts debugging from the beginning.")]
+        HRESULT Restart();
+        [id(0x0000000e), helpstring("Terminates the current process being debugged, if any.")]
+        HRESULT Stop();
+        [id(0x0000000f), helpstring("Stops (interrupts) execution of the current process being debugged.")]
+        HRESULT Break();
+        [id(0x00000010), helpstring("Evaluates an expression as if it were entered into a watch window.")]
+        HRESULT Evaluate(
+                        [in] BSTR expr, 
+                        [out, retval] BSTR* pBSTR);
+        [id(0x00000011), helpstring("Moves the cursor to the next line that will execute.  This may be the current line.")]
+        HRESULT ShowNextStatement();
+        [id(0x00000012), helpstring("Causes the process being debugged to execute until control is transferred to the cursor location.")]
+        HRESULT RunToCursor();
+        [id(0x00000013), helpstring("Forces execution to contine, beginning with the current cursor location.")]
+        HRESULT SetNextStatement([in, optional] VARIANT Selection);
+    };
+
+    [
+      uuid(34C63002-AE64-11CF-AB59-00AA00C091A1),
+      hidden
+    ]
+    dispinterface IDispDebugger {
+        properties:
+            [id(0x00000001)            ]
+            IDispatch* Application;
+            [id(0x00000002)            ]
+            IDispatch* Parent;
+            [id(0x00000003)            ]
+            IDispatch* Breakpoints;
+            [id(0x00000004)            ]
+            long DefaultRadix;
+            [id(0x00000005)            ]
+            DsExecutionState State;
+            [id(0x00000006)            ]
+            VARIANT_BOOL JustInTimeDebugging;
+            [id(0x00000007)            ]
+            VARIANT_BOOL RemoteProcedureCallDebugging;
+        methods:
+            [id(0x00000009)]
+            void Go();
+            [id(0x0000000a)]
+            void StepInto();
+            [id(0x0000000b)]
+            void StepOver();
+            [id(0x0000000c)]
+            void StepOut();
+            [id(0x0000000d)]
+            void Restart();
+            [id(0x0000000e)]
+            void Stop();
+            [id(0x0000000f)]
+            void Break();
+            [id(0x00000010)]
+            BSTR Evaluate([in] BSTR Expression);
+            [id(0x00000011)]
+            void ShowNextStatement();
+            [id(0x00000012)]
+            void RunToCursor();
+            [id(0x00000013)]
+            void SetNextStatement([in, optional] VARIANT Selection);
+    };
+
+    [
+      uuid(34C63003-AE64-11CF-AB59-00AA00C091A1),
+      helpstring("Debugger object.")
+    ]
+    coclass Debugger {
+        dispinterface IDispDebugger;
+        [default] interface IDebugger;
+        [default, source] dispinterface IDispDebuggerEvents;
+        [source] interface IDebuggerEvents;
+    };
+
+    [
+      odl,
+      uuid(34C63004-AE64-11CF-AB59-00AA00C091A1),
+      helpstring("Breakpoint Object"),
+      hidden,
+      dual,
+      oleautomation
+    ]
+    interface IBreakpoint : IDispatch {
+        [id(0x00000001), propget, helpstring("Returns the Application Object.")]
+        HRESULT Application([out, retval] IDispatch** ppDispatch);
+        [id(0x00000002), propget, helpstring("Returns the Debugger object.")]
+        HRESULT Parent([out, retval] IDispatch** ppDispatch);
+        [id(0x00000003), propget, helpstring("Returns/sets the Enabled property of the breakpoint.")]
+        HRESULT Enabled([out, retval] VARIANT_BOOL* pBool);
+        [id(0x00000003), propput, helpstring("Returns/sets the Enabled property of the breakpoint.")]
+        HRESULT Enabled([in] VARIANT_BOOL pBool);
+        [id(0x00000004), propget, helpstring("Returns the line number of the breakpoint.")]
+        HRESULT Location([out, retval] BSTR* pBSTR);
+        [id(0x00000005), propget, helpstring("Returns the file system name of the source file corresponding to the breakpoint.")]
+        HRESULT File([out, retval] BSTR* pBSTR);
+        [id(0x00000006), propget, helpstring("Returns the (optional) source function name corresponding to the breakpoint.")]
+        HRESULT Function([out, retval] BSTR* pBSTR);
+        [id(0x00000007), propget, helpstring("Returns the file system name of the application being debugged (may be blank).")]
+        HRESULT Executable([out, retval] BSTR* pBSTR);
+        [id(0x00000008), propget, helpstring("Returns the (optional) condition governing the breakpoint.")]
+        HRESULT Condition([out, retval] BSTR* pBSTR);
+        [id(0x00000008), propput, helpstring("Returns the (optional) condition governing the breakpoint.")]
+        HRESULT Condition([in] BSTR pBSTR);
+        [id(0x00000009), propget, helpstring("Returns the (optional) elements of the breakpoint, representing the range of memory the data breakpoint is watching.")]
+        HRESULT Elements([out, retval] long* pLong);
+        [id(0x0000000a), propget, helpstring("Returns the (optional) pass count governing the breakpoint.")]
+        HRESULT PassCount([out, retval] long* pLong);
+        [id(0x0000000b), propget, helpstring("Returns the (optional) Windows message governing the breakpoint.")]
+        HRESULT Message([out, retval] long* pLong);
+        [id(0x0000000c), propget, helpstring("Returns the (optional) window procedure of the breakpoint.")]
+        HRESULT WindowProcedure([out, retval] BSTR* pBSTR);
+        [id(0x0000000d), propget, helpstring("Returns a member of the DsBreakpointType enumeration representing the type of the breakpoint.")]
+        HRESULT Type([out, retval] long* pLong);
+        [id(0x0000000f), helpstring("Removes the breakpoint.")]
+        HRESULT Remove();
+    };
+
+    [
+      uuid(34C63005-AE64-11CF-AB59-00AA00C091A1),
+      hidden
+    ]
+    dispinterface IDispBreakpoint {
+        properties:
+            [id(0x00000001)            ]
+            IDispatch* Application;
+            [id(0x00000002)            ]
+            IDispatch* Parent;
+            [id(0x00000003)            ]
+            VARIANT_BOOL Enabled;
+            [id(0x00000004)            ]
+            BSTR Location;
+            [id(0x00000005)            ]
+            BSTR File;
+            [id(0x00000006)            ]
+            BSTR Function;
+            [id(0x00000007)            ]
+            BSTR Executable;
+            [id(0x00000008)            ]
+            BSTR Condition;
+            [id(0x00000009)            ]
+            long Elements;
+            [id(0x0000000a)            ]
+            long PassCount;
+            [id(0x0000000b)            ]
+            long Message;
+            [id(0x0000000c)            ]
+            BSTR WindowProcedure;
+            [id(0x0000000d)            ]
+            long Type;
+        methods:
+            [id(0x0000000f)]
+            void Remove();
+    };
+
+    [
+      uuid(34C63006-AE64-11CF-AB59-00AA00C091A1),
+      helpstring("Breakpoint Object")
+    ]
+    coclass Breakpoint {
+        dispinterface IDispBreakpoint;
+        [default] interface IBreakpoint;
+    };
+
+    [
+      odl,
+      uuid(34C63007-AE64-11CF-AB59-00AA00C091A1),
+      helpstring("Represents all the enabled and disabled breakpoints currently set."),
+      hidden,
+      dual,
+      oleautomation
+    ]
+    interface IBreakpoints : IDispatch {
+        [id(0x00000001), propget, helpstring("Returns the number of breakpoints.")]
+        HRESULT Count([out, retval] long* Count);
+        [id(0x00000002), propget, helpstring("Returns the Application Object.")]
+        HRESULT Application([out, retval] IDispatch** ppDispatch);
+        [id(0x00000003), propget, helpstring("Returns the Debugger Object.")]
+        HRESULT Parent([out, retval] IDispatch** ppDispatch);
+        [id(0xfffffffc), propget, restricted, hidden]
+        HRESULT _NewEnum([out, retval] IUnknown** _NewEnum);
+        [id(00000000), helpstring("Returns a Breakpoint object from the collection by its index.")]
+        HRESULT Item(
+                        [in] VARIANT index, 
+                        [out, retval] IDispatch** Item);
+        [id(0x00000005), helpstring("Removes all breakpoints.")]
+        HRESULT RemoveAllBreakpoints();
+        [id(0x00000006), helpstring("Removes the breakpoint at a given source line.")]
+        HRESULT RemoveBreakpointAtLine(
+                        [in, optional] VARIANT sel, 
+                        [out, retval] VARIANT_BOOL* bool);
+        [id(0x00000007), helpstring("Adds a breakpoint at a given source line.")]
+        HRESULT AddBreakpointAtLine(
+                        [in, optional] VARIANT sel, 
+                        [out, retval] IDispatch** Item);
+    };
+
+    [
+      uuid(34C63008-AE64-11CF-AB59-00AA00C091A1),
+      hidden
+    ]
+    dispinterface IDispBreakpoints {
+        properties:
+            [id(0x00000001), readonly            ]
+            long Count;
+            [id(0x00000002), readonly            ]
+            IDispatch* Application;
+            [id(0x00000003), readonly            ]
+            IDispatch* Parent;
+            [id(0xfffffffc), readonly, hidden            ]
+            IUnknown* _NewEnum;
+        methods:
+            [id(00000000)]
+            IDispatch* Item(VARIANT index);
+            [id(0x00000005)]
+            void RemoveAllBreakpoints();
+            [id(0x00000006)]
+            VARIANT_BOOL RemoveBreakpointAtLine(VARIANT Selection);
+            [id(0x00000007)]
+            IDispatch* AddBreakpointAtLine(VARIANT Selection);
+    };
+
+    [
+      uuid(34C63009-AE64-11CF-AB59-00AA00C091A1),
+      helpstring("Represents all the enabled and disabled breakpoints currently set.")
+    ]
+    coclass Breakpoints {
+        dispinterface IDispBreakpoints;
+        [default] interface IBreakpoints;
+    };
+};
