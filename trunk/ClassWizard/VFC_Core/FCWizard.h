@@ -2,9 +2,9 @@
 
 
 /* File created by MIDL compiler version 5.01.0164 */
-/* at Mon Mar 23 13:46:43 2009
+/* at Mon May 18 12:50:48 2009
  */
-/* Compiler settings for D:\VFC_Projects\ClsWizard\VFC_Core\FCWizard.idl:
+/* Compiler settings for E:\visualfc\ClassWizard\VFC_Core\FCWizard.idl:
     Oicf (OptLev=i2), W1, Zp8, env=Win32, ms_ext, c_ext
     error checks: allocation ref bounds_check enum stub_data 
 */

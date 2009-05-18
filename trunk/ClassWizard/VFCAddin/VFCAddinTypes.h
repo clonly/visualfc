@@ -2,9 +2,9 @@
 
 
 /* File created by MIDL compiler version 5.01.0164 */
-/* at Mon Mar 23 13:42:31 2009
+/* at Mon May 18 13:19:07 2009
  */
-/* Compiler settings for D:\VFC_Projects\ClsWizard\VFCAddin\VFCAddin.odl:
+/* Compiler settings for E:\visualfc\ClassWizard\VFCAddin\VFCAddin.odl:
     Os (OptLev=s), W1, Zp8, env=Win32, ms_ext, c_ext
     error checks: allocation ref bounds_check enum stub_data 
 */

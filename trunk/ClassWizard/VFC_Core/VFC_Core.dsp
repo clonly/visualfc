@@ -48,7 +48,7 @@ RSC=rc.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MTd /W3 /Gm /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /Yu"stdafx.h" /FD /GZ /c
-# ADD CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /FR /YX"stdafx.h" /FD /GZ /Zm256 /c
+# ADD CPP /nologo /MDd /W3 /Gm /GX /ZI /Od /I "../public" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /FR /YX"stdafx.h" /FD /GZ /Zm256 /c
 # ADD BASE RSC /l 0x804 /d "_DEBUG"
 # ADD RSC /l 0x804 /d "_DEBUG"
 BSC32=bscmake.exe
@@ -59,8 +59,8 @@ LINK32=link.exe
 # ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib Rpcrt4.lib wxbase28.lib /nologo /subsystem:windows /dll /debug /machine:I386 /out:"../bin/vfc_core.dll" /pdbtype:sept
 # Begin Custom Build - Performing registration
 OutDir=.\Debug
-TargetPath=\VFC_Projects\ClsWizard\bin\vfc_core.dll
-InputPath=\VFC_Projects\ClsWizard\bin\vfc_core.dll
+TargetPath=\visualfc\ClassWizard\bin\vfc_core.dll
+InputPath=\visualfc\ClassWizard\bin\vfc_core.dll
 SOURCE="$(InputPath)"
 
 "$(OutDir)\regsvr32.trg" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
@@ -94,8 +94,8 @@ LINK32=link.exe
 # ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib wxbase25.lib wxmsw25_core.lib /nologo /subsystem:windows /dll /debug /machine:I386 /out:"../bin/VFC_Core.dll" /pdbtype:sept
 # Begin Custom Build - Performing registration
 OutDir=.\DebugU
-TargetPath=\VFC_Projects\ClsWizard\bin\vfc_core.dll
-InputPath=\VFC_Projects\ClsWizard\bin\vfc_core.dll
+TargetPath=\visualfc\ClassWizard\bin\vfc_core.dll
+InputPath=\visualfc\ClassWizard\bin\vfc_core.dll
 SOURCE="$(InputPath)"
 
 "$(OutDir)\regsvr32.trg" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
@@ -135,8 +135,8 @@ LINK32=link.exe
 # ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib wxbase25.lib wxmsw25_core.lib /nologo /subsystem:windows /dll /machine:I386 /out:"../bin/VFC_Core.dll"
 # Begin Custom Build - Performing registration
 OutDir=.\ReleaseMinSize
-TargetPath=\VFC_Projects\ClsWizard\bin\vfc_core.dll
-InputPath=\VFC_Projects\ClsWizard\bin\vfc_core.dll
+TargetPath=\visualfc\ClassWizard\bin\vfc_core.dll
+InputPath=\visualfc\ClassWizard\bin\vfc_core.dll
 SOURCE="$(InputPath)"
 
 "$(OutDir)\regsvr32.trg" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
@@ -170,8 +170,8 @@ LINK32=link.exe
 # ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib wxbase25.lib wxmsw25_core.lib /nologo /subsystem:windows /dll /machine:I386 /out:"../bin/VFC_Core.dll"
 # Begin Custom Build - Performing registration
 OutDir=.\ReleaseMinDependency
-TargetPath=\VFC_Projects\ClsWizard\bin\vfc_core.dll
-InputPath=\VFC_Projects\ClsWizard\bin\vfc_core.dll
+TargetPath=\visualfc\ClassWizard\bin\vfc_core.dll
+InputPath=\visualfc\ClassWizard\bin\vfc_core.dll
 SOURCE="$(InputPath)"
 
 "$(OutDir)\regsvr32.trg" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
@@ -205,8 +205,8 @@ LINK32=link.exe
 # ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib wxbase25.lib wxmsw25_core.lib /nologo /subsystem:windows /dll /machine:I386 /out:"../bin/VFC_Core.dll"
 # Begin Custom Build - Performing registration
 OutDir=.\ReleaseUMinSize
-TargetPath=\VFC_Projects\ClsWizard\bin\vfc_core.dll
-InputPath=\VFC_Projects\ClsWizard\bin\vfc_core.dll
+TargetPath=\visualfc\ClassWizard\bin\vfc_core.dll
+InputPath=\visualfc\ClassWizard\bin\vfc_core.dll
 SOURCE="$(InputPath)"
 
 "$(OutDir)\regsvr32.trg" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
@@ -246,8 +246,8 @@ LINK32=link.exe
 # ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib wxbase25.lib wxmsw25_core.lib /nologo /subsystem:windows /dll /machine:I386 /out:"../bin/VFC_Core.dll"
 # Begin Custom Build - Performing registration
 OutDir=.\ReleaseUMinDependency
-TargetPath=\VFC_Projects\ClsWizard\bin\vfc_core.dll
-InputPath=\VFC_Projects\ClsWizard\bin\vfc_core.dll
+TargetPath=\visualfc\ClassWizard\bin\vfc_core.dll
+InputPath=\visualfc\ClassWizard\bin\vfc_core.dll
 SOURCE="$(InputPath)"
 
 "$(OutDir)\regsvr32.trg" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
@@ -277,7 +277,7 @@ SOURCE="$(InputPath)"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MD /W3 /O1 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /FR /YX"stdafx.h" /FD /c
-# ADD CPP /nologo /MT /W3 /GX /O1 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /Fr /YX"stdafx.h" /FD /Zm256 /c
+# ADD CPP /nologo /MD /W3 /GX /O1 /I "../public" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /Fr /YX"stdafx.h" /FD /Zm256 /c
 # ADD BASE RSC /l 0x804 /d "NDEBUG"
 # ADD RSC /l 0x804 /d "NDEBUG"
 BSC32=bscmake.exe
@@ -288,8 +288,8 @@ LINK32=link.exe
 # ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib wxbase28.lib /nologo /subsystem:windows /dll /machine:I386 /out:"../bin/vfc_core.dll"
 # Begin Custom Build - Performing registration
 OutDir=.\Release
-TargetPath=\VFC_Projects\ClsWizard\bin\vfc_core.dll
-InputPath=\VFC_Projects\ClsWizard\bin\vfc_core.dll
+TargetPath=\visualfc\ClassWizard\bin\vfc_core.dll
+InputPath=\visualfc\ClassWizard\bin\vfc_core.dll
 SOURCE="$(InputPath)"
 
 "$(OutDir)\regsvr32.trg" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
