@@ -37,19 +37,19 @@ extern CAppModule _Module;
 #include <atlsplit.h>
 #include <atlddx.h>
 
+#include "atltabex.h"
 #include "vfcframe.h"
 #include "vfcpanel.h"
 #include "vfcsplit.h"
 #include "vfcpanes.h"
+#include "vfcfonts.h"
 
 #include <map>
 
-#include "../public/atltabex.h"
-#include "../public/foxlib.h"
-#include "../public/foxuilib.h"
-#include "../public/qevent.h"
-#include "../public/vfcfonts.h"
-#include "../public/vfcsplit.h"
+#include "foxlib.h"
+#include "foxuilib.h"
+#include "qevent.h"
+
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
