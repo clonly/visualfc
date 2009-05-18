@@ -537,7 +537,7 @@ public:
 		}
 		return false;
 	}
-	Token * WinxAddNotifyToken(win32_notify_code * wnc, Token * tkcls, LPCSTR id, LPCTSTR func, bool bMenu)
+	Token * WinxAddNotifyToken(win32_notify_code * wnc, Token * tkcls, LPCTSTR id, LPCTSTR func, bool bMenu)
 	{
 		Token * tk = new Token();
 
