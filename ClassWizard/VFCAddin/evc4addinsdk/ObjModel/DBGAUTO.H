@@ -82,9 +82,9 @@ BEGIN_INTERFACE
     STDMETHOD(put_DefaultRadix)(THIS_ long l) PURE;
     STDMETHOD(get_State)(THIS_ DsExecutionState FAR* pState) PURE;
     STDMETHOD(get_JustInTimeDebugging)(THIS_ VARIANT_BOOL FAR* pBoolean) PURE;
-    STDMETHOD(put_JustInTimeDebugging)(THIS_ VARIANT_BOOL bool) PURE;
+    STDMETHOD(put_JustInTimeDebugging)(THIS_ VARIANT_BOOL bBool) PURE;
     STDMETHOD(get_RemoteProcedureCallDebugging)(THIS_ VARIANT_BOOL FAR* pBoolean) PURE;
-    STDMETHOD(put_RemoteProcedureCallDebugging)(THIS_ VARIANT_BOOL bool) PURE;
+    STDMETHOD(put_RemoteProcedureCallDebugging)(THIS_ VARIANT_BOOL bBool) PURE;
     STDMETHOD(Go)(THIS) PURE;
     STDMETHOD(StepInto)(THIS) PURE;
     STDMETHOD(StepOver)(THIS) PURE;
@@ -198,7 +198,7 @@ BEGIN_INTERFACE
     STDMETHOD(get_Application)(THIS_ IDispatch * FAR* ppDispatch) PURE;
     STDMETHOD(get_Parent)(THIS_ IDispatch * FAR* ppDispatch) PURE;
     STDMETHOD(get_Enabled)(THIS_ VARIANT_BOOL FAR* pBool) PURE;
-    STDMETHOD(put_Enabled)(THIS_ VARIANT_BOOL bool) PURE;
+    STDMETHOD(put_Enabled)(THIS_ VARIANT_BOOL bBool) PURE;
     STDMETHOD(get_Location)(THIS_ BSTR FAR* pBSTR) PURE;
     STDMETHOD(get_File)(THIS_ BSTR FAR* pBSTR) PURE;
     STDMETHOD(get_Function)(THIS_ BSTR FAR* pBSTR) PURE;
@@ -268,7 +268,7 @@ BEGIN_INTERFACE
     STDMETHOD(get__NewEnum)(THIS_ IUnknown * FAR* _NewEnum) PURE;
     STDMETHOD(Item)(THIS_ VARIANT index, IDispatch * FAR* Item) PURE;
     STDMETHOD(RemoveAllBreakpoints)(THIS) PURE;	
-    STDMETHOD(RemoveBreakpointAtLine)(THIS_ VARIANT sel, VARIANT_BOOL FAR* bool) PURE;
+    STDMETHOD(RemoveBreakpointAtLine)(THIS_ VARIANT sel, VARIANT_BOOL FAR* bBool) PURE;
     STDMETHOD(AddBreakpointAtLine)(THIS_ VARIANT sel, IDispatch * FAR* Item) PURE;
 };
 
