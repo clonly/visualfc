@@ -185,11 +185,21 @@ bool tools_addin::ExecVFCWizard()
 
 bool tools_addin::LoadVSProject(const CString &proj)
 {
+	/*
 	int pos = proj.ReverseFind(_T('\\'));
 	if (pos != -1)
 		m_projName = proj.Right(proj.GetLength()-pos-1);
 	else
 		m_projName = _T("NoName");
-	m_dsp.load_vcproj(proj);
+	*/
+	m_projName = ::PathFindFileName(proj);
+	CString ext = PathFindExtension(proj);
+	ext.MakeLower();
+	if (ext == ".cbp")
+	{
+		m_dsp.load_cbp(proj);
+	}
+	else
+		m_dsp.load_vcproj(proj);
 	return false;
 }
