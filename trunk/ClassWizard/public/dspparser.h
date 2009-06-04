@@ -11,6 +11,7 @@ public:
 	CSimpleArray<CString>	source;
 	CString					root_path;
 public:
+	bool load_cbp(LPCTSTR lpszFileName);
 	bool load_dsp(LPCTSTR lpszFileName);
 	bool load_vcproj(LPCTSTR lpszFileName);
 };
@@ -93,6 +94,40 @@ inline bool dspparser::load_dsp(LPCTSTR lpszFileName)
 				tmp = root_path+tmp;
 			}
 			source.Add(tmp);
+		}
+	}
+	file.Close();
+	return true;
+}
+
+inline bool dspparser::load_cbp(LPCTSTR lpszFileName)
+{
+	source.RemoveAll();
+	root_path = get_file_root(lpszFileName);
+	CTextFile file;
+	if (file.Open(lpszFileName,CFile::modeRead | CFile::shareDenyNone) == FALSE)
+	{
+		return false;
+	}
+	CString line;
+	CString tmp;
+	const int len = strlen("filename=");///sizeof(char);
+	int pos = -1;
+	while(file.ReadLine(line))
+	{
+		line.TrimLeft();
+		line.TrimRight();
+		pos = line.Find(_T("filename="));
+		if (pos != -1)
+		{
+			tmp = line.Right(line.GetLength()-pos-len);
+			int left = tmp.Find(_T('\"'));
+			int right = tmp.ReverseFind(_T('\"'));
+			if (left != -1 && right != -1)
+			{
+				tmp = tmp.Mid(left+1,right-left-1);
+				source.Add(root_path+tmp);
+			}
 		}
 	}
 	file.Close();
