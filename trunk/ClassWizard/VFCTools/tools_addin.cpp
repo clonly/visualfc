@@ -199,6 +199,10 @@ bool tools_addin::LoadVSProject(const CString &proj)
 	{
 		m_dsp.load_cbp(proj);
 	}
+	else if (ext == ".vcxproj")
+	{
+		m_dsp.load_vcxproj(proj);
+	}
 	else
 		m_dsp.load_vcproj(proj);
 	return false;

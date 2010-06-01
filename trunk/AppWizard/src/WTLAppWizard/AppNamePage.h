@@ -28,6 +28,7 @@ public:
 			info->bVS2003 = info->load_cfg_bool(_T("PROJECT_VS2003"),0);
 			info->bVS2005 = info->load_cfg_bool(_T("PROJECT_VS2005"),1);
 			info->bVS2008 = info->load_cfg_bool(_T("PROJECT_VS2008"),0);
+			info->bVS2010 = info->load_cfg_bool(_T("PROJECT_VS2010"),1);
 			info->nSDKType = info->load_cfg_int(_T("SDK_TYPE"),2);
 			if (info->nSDKType < 0 || info->nSDKType > 3)
 			{
@@ -42,6 +43,7 @@ public:
 		DDX_CHECK(IDC_VS2003_CHECK,info->bVS2003)
 		DDX_CHECK(IDC_VS2005_CHECK,info->bVS2005)
 		DDX_CHECK(IDC_VS2008_CHECK,info->bVS2008)
+		DDX_CHECK(IDC_VS2010_CHECK,info->bVS2010)
 		DDX_TEXT(IDC_LOCATION_EDIT, m_strLocation)
 		//bSaveAndValidate
 		if (bSaveAndValidate == DDX_SAVE)
@@ -64,7 +66,7 @@ public:
 				MessageBox("The project path is exists!","WTLAppWizard",MB_OK | MB_ICONWARNING);
 				return FALSE;
 			}
-			if (!info->bVS60 && !info->bVS2002 && !info->bVS2003 && !info->bVS2005 && !info->bVS2008)
+			if (!info->bVS60 && !info->bVS2002 && !info->bVS2003 && !info->bVS2005 && !info->bVS2008 && !info->bVS2010)
 			{
 				MessageBox("Please select make target","WTLAppWizard",MB_OK | MB_ICONWARNING);
 				return FALSE;
@@ -79,6 +81,7 @@ public:
 			info->save_cfg_bool(_T("PROJECT_VS2003"),info->bVS2003);
 			info->save_cfg_bool(_T("PROJECT_VS2005"),info->bVS2005);
 			info->save_cfg_bool(_T("PROJECT_VS2008"),info->bVS2008);
+			info->save_cfg_bool(_T("PROJECT_VS2010"),info->bVS2010);
 			info->save_cfg_int(_T("SDK_TYPE"),info->nSDKType);
 		}
 	END_DDX_MAP();

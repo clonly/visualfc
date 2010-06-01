@@ -172,17 +172,15 @@ BEGIN
                     ES_READONLY
     LTEXT           "Project Path:",IDC_STATIC,133,65,53,8
     CONTROL         "make .vcproj for Visual Studio 2005",IDC_VS2005_CHECK,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,156,189,10
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,153,189,10
     CONTROL         "make .vcproj for Visual Studio 2008",IDC_VS2008_CHECK,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,172,153,10
-    CONTROL         "make .vcproj for Visual Studio 2003 (test)",
-                    IDC_VS2003_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
-                    133,140,184,10
-    CONTROL         "make .vcproj for Visual Studio 2002 (test)",
-                    IDC_VS2002_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
-                    133,124,184,10
-    LTEXT           "VisualFC WTL AppWizard Vesion 0.52 build: 2008-4-10",
-                    IDC_STATIC,155,189,205,8
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,168,153,10
+    CONTROL         "make .vcproj for Visual Studio 2003",IDC_VS2003_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,138,156,10
+    CONTROL         "make .vcproj for Visual Studio 2002",IDC_VS2002_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,123,156,10
+    LTEXT           "VisualFC WTL AppWizard Vesion 0.6 build: 2010-6-1",
+                    IDC_STATIC,155,198,197,8
     CONTROL         "WINVER undefine",IDC_SDK_RADIO1,"Button",
                     BS_AUTORADIOBUTTON | WS_GROUP,329,108,76,10
     CONTROL         "WINVER = 0x0400",IDC_SDK_RADIO2,"Button",
@@ -191,6 +189,8 @@ BEGIN
                     BS_AUTORADIOBUTTON,329,140,76,10
     CONTROL         "WINVER = 0x0600",IDC_SDK_RADIO4,"Button",
                     BS_AUTORADIOBUTTON,329,156,76,10
+    CONTROL         "make .vcxproj for Visual Studio 2010",IDC_VS2010_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,183,153,10
 END
 
 IDD_CONFIRM_DLG DIALOG DISCARDABLE  0, 0, 309, 296

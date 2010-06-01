@@ -21,6 +21,8 @@ root.vs2005.vcproj
 [!endif]
 [!if PROJECT_VS2008]
 root.vs2008.vcproj
+[!if PROJECT_VS2010]
+root.vcxproj
 [!endif]
 [!if !WTL_APPTYPE_DLG]
 frame.h
