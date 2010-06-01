@@ -7,7 +7,7 @@
 char info[] = 
 "VisualFC Tools" "\r\n"
 "\r\n"
-"For VS2005/VS2008/VCExpress Tools" "\r\n"
+"For VS2005/VS2008/VS2010/VCExpress External Tools" "\r\n"
 "Command:\tC:\\VisualFC\\bin\\VFCTools.exe" "\r\n"
 "Arguments:\t$(ProjectDir)$(ProjectFileName)" "\r\n"
 "\r\n"

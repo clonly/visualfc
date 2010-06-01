@@ -109,6 +109,8 @@ bool CWizard::make_project()
 		wizard.AddSymbol("PROJECT_VS2005",true);
 	if (info.bVS2008)
 		wizard.AddSymbol("PROJECT_VS2008",true);
+	if (info.bVS2010)
+		wizard.AddSymbol("PROJECT_VS2010",true);
 
 	if (info.nAppType == 3 || info.nAppType == 4)
 		wizard.AddSymbol("WTL_USE_VIEW",true);

@@ -31,6 +31,7 @@ CWizardInfo::CWizardInfo()
 	bVS2002 = false;
 	bVS2003 = false;
 	bVS2008 = false;
+	bVS2010 = false;
 	bVS2005 = false;
 	bUseView = true;
 	bFrameDialog = false;

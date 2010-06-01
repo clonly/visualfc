@@ -25,6 +25,7 @@
 #define IDC_CHECK4                      1006
 #define IDC_VS2003_CHECK                1006
 #define IDC_TOOLBAR                     1007
+#define IDC_VS2010_CHECK                2007
 #define IDC_LOCATION_EDIT               1008
 #define IDC_VIEWTYPE                    1012
 #define IDC_MODALDIALOG_CHECK           1013

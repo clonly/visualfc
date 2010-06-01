@@ -47,6 +47,7 @@ public:
 	bool		bVS2003;
 	bool		bVS2005;
 	bool		bVS2008;
+	bool		bVS2010;
 	bool		bVS60STD;
 
 	std::vector<CString>	ar_view;

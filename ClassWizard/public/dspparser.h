@@ -14,6 +14,7 @@ public:
 	bool load_cbp(LPCTSTR lpszFileName);
 	bool load_dsp(LPCTSTR lpszFileName);
 	bool load_vcproj(LPCTSTR lpszFileName);
+	bool load_vcxproj(LPCTSTR lpszFileName);
 };
 
 inline CString get_file_root(const CString & filename)
@@ -63,6 +64,40 @@ inline bool dspparser::load_vcproj(LPCTSTR lpszFileName)
 				source.Add(root_path+tmp);
 			}
 		}
+	}
+	file.Close();
+	return true;
+}
+
+inline bool dspparser::load_vcxproj(LPCTSTR lpszFileName)
+{
+	source.RemoveAll();
+	root_path = get_file_root(lpszFileName);
+	CTextFile file;
+	if (file.Open(lpszFileName,CFile::modeRead | CFile::shareDenyNone) == FALSE)
+	{
+		return false;
+	}
+	CString line;
+	CString tmp;
+	while(file.ReadLine(line))
+	{
+		line.TrimLeft();
+		line.TrimRight();
+		int pos = line.Find(_T("Include="));
+		if (pos != -1)
+		{
+			int left = line.Find(_T('\"'),pos);
+			int right = line.Find(_T("\""),left+1);
+			if (left != -1 && right != -1)
+			{
+				tmp = line.Mid(left+1,right-left-1);
+				if (tmp.Find(_T(":")) == -1)
+					source.Add(root_path+tmp);
+				else
+					source.Add(tmp);
+			}
+		}	
 	}
 	file.Close();
 	return true;
