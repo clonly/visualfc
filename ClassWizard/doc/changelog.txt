@@ -1,5 +1,12 @@
 VisualFC
 
+version 0.82 (2010-6-1)
+*) VFCTools.exe support for VS2010/VCExpress
+*) WTLAppWizard  add .vcxproj (VS2010 project)
+
+version 0.80 RC2 (2009-5-18)
+*) Compatible Vista and Window7 + VS2008
+
 version 0.80 RC1 (2009-3-22)
 *) add VFCTools for VS2005/VS2008/VCExpress
 

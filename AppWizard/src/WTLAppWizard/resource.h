@@ -25,7 +25,6 @@
 #define IDC_CHECK4                      1006
 #define IDC_VS2003_CHECK                1006
 #define IDC_TOOLBAR                     1007
-#define IDC_VS2010_CHECK                2007
 #define IDC_LOCATION_EDIT               1008
 #define IDC_VIEWTYPE                    1012
 #define IDC_MODALDIALOG_CHECK           1013
@@ -48,12 +47,14 @@
 #define IDC_SDK_RADIO2                  1029
 #define IDC_SDK_RADIO3                  1030
 #define IDC_SDK_RADIO4                  1031
+#define IDC_SUPPORT_SDK_ATL3_CHECK      1032
 #define IDC_APPTYPE_SDI                 2000
 #define IDC_APPTYPE_MTSDI               2001
 #define IDC_APPTYPE_MDI                 2002
 #define IDC_APPTYPE_TABVIEW             2003
 #define IDC_APPTYPE_EXPLORER            2004
 #define IDC_APPTYPE_DLG                 2005
+#define IDC_VS2010_CHECK                2007
 
 // Next default values for new objects
 // 
@@ -61,7 +62,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        208
 #define _APS_NEXT_COMMAND_VALUE         32772
-#define _APS_NEXT_CONTROL_VALUE         1032
+#define _APS_NEXT_CONTROL_VALUE         1033
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
