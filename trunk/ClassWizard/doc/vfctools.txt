@@ -1,16 +1,16 @@
-VFCTools for VCExpress and Code::Blocks
+VisualFC Tools 0.82
 
-download VFCAddin0.80.RC2 and install
-download VFCTools and update
+1.System
+VS2003/VS2005/VS2008/VS2010 or VCExpress
 
-For VS2005/VS2008/VCExpress Tools
-Command:  	C:\VisualFC\bin\VFCTools.exe
-Arguments:	$(ProjectDir)$(ProjectFileName)
+2.Install for VS External Tools
 
-For Code::Blocks Tools
-Executable:	C:\VisualFC\bin\VFCTools.exe
-Parameters:	${PROJECT_DIR}${PROJECT_FILENAME}
+VS2005 Tools -> external tools ->
 
+Caption = VFCTools
+Command = c:\visualfc\bin\vfctools.exe
+Arguments= $(ProjectDir)$(ProjectFileName)
 
-WTLAppWizard Tools
-Command/Executable:	C:\VisualFC\bin\AppWizard.exe
+3. Run the Tools
+Open VS2005 and Load WTL Projects
+Clicked VFC2005->Tools->VFCTools

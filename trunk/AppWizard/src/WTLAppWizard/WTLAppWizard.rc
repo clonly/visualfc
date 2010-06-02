@@ -154,7 +154,7 @@ BEGIN
                     WS_EX_STATICEDGE
 END
 
-IDD_APPNAME_PAGE DIALOG DISCARDABLE  0, 0, 429, 217
+IDD_APPNAME_PAGE DIALOG DISCARDABLE  0, 0, 429, 209
 STYLE WS_CHILD
 FONT 8, "MS Sans Serif"
 BEGIN
@@ -163,24 +163,24 @@ BEGIN
     LTEXT           "Project Name:",IDC_STATIC,133,7,53,8
     EDITTEXT        IDC_PROJECT_NAME_EDIT,133,19,163,14,ES_AUTOHSCROLL
     LTEXT           "Location:",IDC_STATIC,133,35,37,8
-    EDITTEXT        IDC_LOCATION_EDIT,133,47,163,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LOCATION_EDIT,133,45,163,14,ES_AUTOHSCROLL
     PUSHBUTTON      "Browse",IDC_BROWSE,303,47,50,14
     CONTROL         "make .dsp for Visual Studio 6.0",IDC_VS60_CHECK,"Button",
-                    BS_AUTOCHECKBOX | WS_TABSTOP,133,108,140,10
-    LTEXT           "Select Taget",IDC_STATIC,133,94,49,8
-    EDITTEXT        IDC_PROJECT_PATH_EDIT,133,77,162,14,ES_AUTOHSCROLL | 
+                    BS_AUTOCHECKBOX | WS_TABSTOP,133,100,140,10
+    LTEXT           "Select Taget",IDC_STATIC,133,86,49,8
+    EDITTEXT        IDC_PROJECT_PATH_EDIT,133,71,162,14,ES_AUTOHSCROLL | 
                     ES_READONLY
-    LTEXT           "Project Path:",IDC_STATIC,133,65,53,8
+    LTEXT           "Project Path:",IDC_STATIC,133,61,53,8
     CONTROL         "make .vcproj for Visual Studio 2005",IDC_VS2005_CHECK,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,153,189,10
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,145,189,10
     CONTROL         "make .vcproj for Visual Studio 2008",IDC_VS2008_CHECK,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,168,153,10
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,160,153,10
     CONTROL         "make .vcproj for Visual Studio 2003",IDC_VS2003_CHECK,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,138,156,10
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,130,156,10
     CONTROL         "make .vcproj for Visual Studio 2002",IDC_VS2002_CHECK,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,123,156,10
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,115,156,10
     LTEXT           "VisualFC WTL AppWizard Vesion 0.6 build: 2010-6-1",
-                    IDC_STATIC,155,198,197,8
+                    IDC_STATIC,155,189,197,8
     CONTROL         "WINVER undefine",IDC_SDK_RADIO1,"Button",
                     BS_AUTORADIOBUTTON | WS_GROUP,329,108,76,10
     CONTROL         "WINVER = 0x0400",IDC_SDK_RADIO2,"Button",
@@ -190,7 +190,9 @@ BEGIN
     CONTROL         "WINVER = 0x0600",IDC_SDK_RADIO4,"Button",
                     BS_AUTORADIOBUTTON,329,156,76,10
     CONTROL         "make .vcxproj for Visual Studio 2010",IDC_VS2010_CHECK,
-                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,183,153,10
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,133,175,153,10
+    CONTROL         "SUPPORT_SDK_ATL3",IDC_SUPPORT_SDK_ATL3_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,330,173,92,10
 END
 
 IDD_CONFIRM_DLG DIALOG DISCARDABLE  0, 0, 309, 296
@@ -253,7 +255,7 @@ BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 422
         TOPMARGIN, 7
-        BOTTOMMARGIN, 208
+        BOTTOMMARGIN, 200
     END
 
     IDD_CONFIRM_DLG, DIALOG

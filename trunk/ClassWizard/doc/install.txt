@@ -1,9 +1,10 @@
-VisualFC Install for VS60/EVC4/VS2003/VS2005/VS2008
+VisualFC Install for VS60/EVC4/VS2003/VS2005/VS2008/VS2010/VCExpress
 
 *****************************************************
 
 1. install for VFCAddinSetup.msi
-2. install for VFCAddin0.8.zip
+2. install for VFCAddin0.82.zip
+3. install VFCTools for VCExpress and VS2010
 
 ******************************************************
 
@@ -71,3 +72,21 @@ run C:\VISUALFC\bin\InstallVS2005.reg to install for vs2005
 run C:\VISUALFC\bin\InstallVS2008.reg to install for vs2008
 Tools -> VisualFC
 you can open vs2003/vs2005/vs2008 -> tools ->customize->addin and drop VisualFC to visual studio toolbar 
+
+
+3. install VFCTools for VCExpress and VS2010
+
+a.System
+VS2003/VS2005/VS2008/VS2010 or VCExpress
+
+b.Install for VS External Tools
+
+VS2005 Tools -> external tools ->
+
+Caption = VFCTools
+Command = c:\visualfc\bin\vfctools.exe
+Arguments= $(ProjectDir)$(ProjectFileName)
+
+c. Run the Tools
+Open VS2005 and Load WTL Projects
+Clicked VFC2005->Tools->VFCTools

@@ -118,7 +118,7 @@ bool CWizard::make_project()
 	if (info.bManifest)
 		wizard.AddSymbol("WTL_USE_MANIFEST",true);
 	
-	if ( (info.bVS2005 || info.bVS2008) && info.bManifest)
+	if ( (info.bVS2005 || info.bVS2008 || info.bVS2010) && info.bManifest)
 	{
 		wizard.AddSymbol("WTL_USE_EMBEDDED_MANIFEST", true);
 		if (!info.bVS60 && !info.bVS2002 && !info.bVS2003)
